@@ -4,7 +4,8 @@
 
 <p align="center"><a href="https://www.42sp.org.br/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=SP&color=000&style=for-the-badge&logo=42""></a></p>
 
-<p align="center"><img src="https://game.42sp.org.br/static/assets/achievements/push_swapn.png" alt="So Long"> </p>
+<!-- <p align="center"><img src="https://game.42sp.org.br/static/assets/achievements/push_swapn.png" alt="So Long"> </p> -->
+<p align="center"><img src="https://i2.wp.com/www.aponia-dental-center.com/fachzahnarztliche-praxis/wp-content/uploads/2014/01/work-in-progress.png?fit=286%2C253" alt="So Long"> </p>
 
 # What is Push Swap?
 
