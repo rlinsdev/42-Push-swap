@@ -7,6 +7,13 @@
 <!-- <p align="center"><img src="https://game.42sp.org.br/static/assets/achievements/push_swapn.png" alt="So Long"> </p> -->
 <p align="center"><img src="https://i2.wp.com/www.aponia-dental-center.com/fachzahnarztliche-praxis/wp-content/uploads/2014/01/work-in-progress.png?fit=286%2C253" alt="So Long"> </p>
 
+
+
+<!-- https://hits.dwyl.com/ -->
+[![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat)](http://hits.dwyl.com/rlinsdev/42-Push-swap)
+
+<!-- [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap) -->
+
 # What is Push Swap?
 
 •Lorm spum
