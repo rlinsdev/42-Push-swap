@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:16:55 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/27 07:37:15 by rlins            ###   ########.fr       */
+/*   Updated: 2022/09/27 07:44:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ node_t *insert_at_head(node_t **head, node_t *node_to_insert)
 	return (node_to_insert);
 }
 
+void *insert_after_node(node_t *node_to_insert_after, node_t *new_node)
+{
+	new_node->next = node_to_insert_after->next;
+	node_to_insert_after->next = new_node;
+}
+
 node_t *find_node(node_t *head, int value)
 {
 	node_t *tmp = head;
@@ -72,6 +78,8 @@ void linked_list()
 
 	tmp = find_node(head, 3);
 	printf("Found the item: %d\n", tmp->value);
+
+	insert_after_node(tmp, create_new_node(80));
 
 	print_list(head);
 	free(tmp);
