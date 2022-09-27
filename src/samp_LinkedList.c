@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:16:55 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/27 07:28:57 by rlins            ###   ########.fr       */
+/*   Updated: 2022/09/27 07:37:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,18 @@ node_t *insert_at_head(node_t **head, node_t *node_to_insert)
 	return (node_to_insert);
 }
 
+node_t *find_node(node_t *head, int value)
+{
+	node_t *tmp = head;
+	while (tmp != NULL)
+	{
+		if (tmp->value == value)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	return (NULL);
+}
+
 void linked_list()
 {
 	node_t *head = NULL;
@@ -57,6 +69,9 @@ void linked_list()
 		// tmp->next = head;
 		// head = tmp;
 	}
+
+	tmp = find_node(head, 3);
+	printf("Found the item: %d\n", tmp->value);
 
 	print_list(head);
 	free(tmp);
