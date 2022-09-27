@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/25 21:04:04 by rlins            ###   ########.fr       */
+/*   Updated: 2022/09/26 14:13:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@
 // # include <string.h> // strerror
 // # include <fcntl.h> // To Open a file
 // # include <sys/wait.h> // waitpid
+
+/* Consts */
+// # define SA "sa"
+// # define SS "ss"
+// # define SB "sb"
+// # define PA "pa"
+// # define PB "pb"
+// # define RA "ra"
+// # define RB "rb"
+// # define RR "rr"
+// # define RRA "rra"
+// # define RRB "rrb"
+// # define RRR "rrr"
 
 
 /**
