@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:16:55 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/26 22:23:33 by rlins            ###   ########.fr       */
+/*   Updated: 2022/09/27 07:09:18 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,29 @@ void	print_list(node_t *head)
 	printf("\n");
 }
 
+node_t *create_new_node(int value)
+{
+	node_t *result = malloc(sizeof(node_t));
+	result->value = value;
+	result->next = NULL;
+	return result;
+}
+
 void linked_list()
 {
-	node_t n1, n2, n3;
 	node_t *head;
+	node_t *tmp;
 
-	n1.value = 45;
-	n2.value = 8;
-	n3.value = 32;
-
-	head = &n3;
-	n3.next = &n2;
-	n2.next = &n1;
-	n1.next = NULL;
+	tmp = create_new_node(32);
+	head = tmp;
+	// free(tmp);
+	tmp = create_new_node(8);
+	head = tmp;
+	// free(tmp);
+	tmp = create_new_node(34);
+	head = tmp;
 
 	print_list(head);
+	free(tmp);
+
 }
