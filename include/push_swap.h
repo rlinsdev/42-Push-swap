@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/26 21:44:06 by rlins            ###   ########.fr       */
+/*   Updated: 2022/09/27 20:19:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ int	start(int argc, char **argv);
 
 // int quick();
 // int merge_main();
-void linked_list();
-
+// void linked_list();
+// void	radixsort();
+void	radixsort2();
+void radixsort3();
 
 #endif
