@@ -27,7 +27,7 @@ MKDIR 		 = mkdir -p
 MAKE_NOPRINT = $(MAKE) --no-print-directory
 
 # Files
-SRC_FILES = push_swap.c operation_handler.c
+SRC_FILES = push_swap.c operation_handler.c operation_swap.c
 
 SOURCES 	= $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES 	= $(patsubst %.c, %.o, $(SRC_FILES))
