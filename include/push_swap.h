@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/28 07:36:15 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/04 19:38:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 // # include <string.h> // strerror
 // # include <fcntl.h> // To Open a file
 // # include <sys/wait.h> // waitpid
+# include <stdlib.h> // malloc
 
 /* Consts */
 // # define SA "sa"
@@ -34,12 +35,11 @@
 // # define RRR "rrr"
 
 // Linked List
-struct s_node
+typedef struct s_node
 {
 	int value;
 	struct s_node *next;
-};
-typedef struct s_node t_node;
+}	t_node;
 
 
 /**
@@ -56,16 +56,10 @@ int	start(int argc, char **argv);
  * @param node_a
  * @param node_b
  */
-void	swap_a (t_node **node_a, t_node **node_b);
+void	swap_a(t_node *node_a);
 
-/**
- * @brief pb (push b): Take the first element at the top of a and put it
- * at the  top of b. Do nothing if a is empty.
- * @param node_a
- * @param node_b
- */
-void	swap_b (t_node **node_a, t_node **node_b);
-void	swap_swap (t_node **node_a, t_node **node_b);
+void	swap_b(t_node *node_b);
+void	swap_swap (t_node *node_a, t_node *node_b);
 
 /**
  * @brief pa (push a): Take the first element at the top of b and put it at the * top of a. Do nothing if b is empty.
@@ -73,6 +67,13 @@ void	swap_swap (t_node **node_a, t_node **node_b);
  * @param node_b
  */
 void	push_a (t_node **node_a, t_node **node_b);
+
+/**
+ * @brief (push b): Take the first element at the top of a and put it at the
+ * top of b. Do nothing if a is empty.
+ * @param node_a
+ * @param node_b
+ */
 void	push_b (t_node **node_a, t_node **node_b);
 
 /**
@@ -81,9 +82,9 @@ void	push_b (t_node **node_a, t_node **node_b);
  * @param node_a
  * @param node_b
  */
-void	rotate_a (t_node **node_a, t_node **node_b);
-void	rotate_b (t_node **node_a, t_node **node_b);
-void	rotate_rotate (t_node **node_a, t_node **node_b);
+void	rotate_a (t_node *node_a);
+void	rotate_b (t_node *node_b);
+void	rotate_rotate (t_node *node_a, t_node *node_b);
 
 /**
  * @brief rra (reverse rotate a): Shift down all elements of stack a by 1.

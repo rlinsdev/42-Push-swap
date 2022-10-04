@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 07:16:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/04 19:05:21 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/04 19:40:13 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,7 @@ void	push_b (t_node **node_a, t_node **node_b)
 	// node_b = aux;
 }
 
-// TODO
-void	rotate_a (t_node **node_a, t_node **node_b)
-{ }
-void	rotate_b (t_node **node_a, t_node **node_b)
-{ }
-void	rotate_rotate (t_node **node_a, t_node **node_b)
-{ }
+
 
 // TODO
 void	reverse_rotate_a (t_node **node_a, t_node **node_b)
