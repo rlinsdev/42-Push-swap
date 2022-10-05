@@ -28,7 +28,7 @@ MAKE_NOPRINT = $(MAKE) --no-print-directory
 
 # Files
 SRC_FILES = push_swap.c operation_handler.c operation_swap.c \
-			operation_rotate.c operation_push.c
+			operation_rotate.c operation_push.c validation_handler.c
 
 SOURCES 	= $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES 	= $(patsubst %.c, %.o, $(SRC_FILES))
@@ -62,6 +62,14 @@ main:	./apps/app.c
 # Compile program and execute main file
 run: all main
 	@$(BINS_PATH)$(EXECUTABLE)
+
+#mcombeau
+test2:				$(NAME)
+					$(eval ARG = $(shell shuf -i 0-100 -n 2))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
 
 # Sanitize
 clean:
