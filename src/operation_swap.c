@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/04 19:13:45 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/04 19:17:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,9 @@ void	swap_swap (t_node *node_a, t_node *node_b)
 }
 
 /**
- * @brief
- *
- * @param first
- * @param second
+ * @brief Will swap the nodes passed by param
+ * @param first First Element
+ * @param second Second Element
  */
 static void	swap_nodes(t_node *first, t_node *second)
 {
@@ -48,4 +47,3 @@ static void	swap_nodes(t_node *first, t_node *second)
 	first->value = second->value;
 	second->value = aux;
 }
-
