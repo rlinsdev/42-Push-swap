@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 13:38:35 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/06 14:13:36 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,44 @@
 
 static int	ft_is_duplicated(char **items, int count);
 static int	ft_number_validation(char *f_item, char *s_item);
+static int	ft_is_number(char *arg);
+static int	ft_is_valid_char_number(char nbr);
 
 int	invalid_input(char **argv, int argc)
 {
 	int	i;
 
 	i = 1;
-	if (ft_is_duplicated(argv, argc))
-		return (1);
-
 	while (i < argc)
 	{
-		// if (ft_is_digit(argv[i]))
+		if (!ft_is_number(argv[i]))
+			return (1);// Not Number
 	 	i++;
 	}
+	if (ft_is_duplicated(argv, argc))
+		return (2); // Duplicated
+	return(0); // Return OK
 }
 
+/**
+ * @brief Verify if all values are valid inputs
+ * @param arg arguments
+ * @return int
+ */
+static int	ft_is_number(char *arg)
+{
+	int	i;
 
+	i = 0;
+	// Signal before number, just jump next value
+	if ((arg[i] == '-' || arg[i] == '+') && arg[i + 1] != '\0')
+		i++;
+	while (arg[i] && ft_is_valid_char_number(arg[i]))
+		i++;
+	if (arg[i] != '\0' && !ft_is_valid_char_number(arg[i]))
+		return (0); // Invalid
+	return (1); // OK
+}
 
 /**
  * @brief Check if exist the same number in param
@@ -42,7 +63,7 @@ static int	ft_is_duplicated(char **items, int count)
 	int	i;
 	int	j;
 
-	// Start in 1. Don't need compare first param
+	// Start in 1. Don't need compare first param (program name)
 	i = 1;
 	while (i < count)
 	{
@@ -63,6 +84,17 @@ static int	ft_is_duplicated(char **items, int count)
 }
 
 /**
+ * @brief Verify if the char is a valid number
+ * @param nbr
+ * @return int 0 if it's not a number. 1 if is a valid number
+ */
+static int	ft_is_valid_char_number(char nbr)
+{
+	// Char between 0 and 9
+	return (nbr >= '0' && nbr <= '9');
+}
+
+/**
  * @brief Verify duplication and check if there are any plus (+) signal before
  * @param f_item
  * @param s_item
@@ -76,7 +108,7 @@ static int	ft_number_validation(char *f_item, char *s_item)
 
 	i = 0;
 	j = i;
-	// +12 must be equal to 12
+	// (+12) must be equal to (12)
 	if (f_item[i] == '+')
 	{
 		i++;
@@ -88,7 +120,7 @@ static int	ft_number_validation(char *f_item, char *s_item)
 	while (f_item[i] != '\0' && s_item[j] != '\0'
 		&& f_item[i] == s_item[j])
 	{
-		// If same, next to the next digit
+		// If same, go to the next digit
 		i++;
 		j++;
 	}
