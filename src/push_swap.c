@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/05 23:11:59 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/06 12:15:36 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ int	start(int argc, char **argv)
 	// // With this it's possible discovery the size of array!
 	// int nbr_itens = sizeof(sortList) / sizeof(sortList[0]);
 
-	// ft_printf("Working");
-	int		*arr;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		size_pile;
 
+	// TODO: Put some message of invalid arguments?
 	if (argc >= 2)
 	{
-		// check_input(argc, argv);
+		if (invalid_input(argv, argc))
+			printf("CRIAR EXIT AQUI-");
 		// arr = creat_arr(argc, argv);
 		// ft_is_duplicated(arr, argc - 1);
 

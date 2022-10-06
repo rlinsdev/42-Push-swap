@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 09:58:13 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/06 12:12:10 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ typedef struct s_stack
  * @return int
  */
 int	start(int argc, char **argv);
+
+/**
+ * @brief Verify if param is correct. Not allowed duplicate, spaces. Just number
+ * @param argv Vector of args
+ * @param argc Cout of args
+ * @return int: Input invalid (1) Input Valid (0)
+ */
+int	invalid_input(char **argv, int argc);
 
 /**
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.

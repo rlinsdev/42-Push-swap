@@ -6,92 +6,94 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/05 08:36:08 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/06 13:38:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-static int	ft_is_digit(char *str);
-static void	terminate(void);
+static int	ft_is_duplicated(char **items, int count);
+static int	ft_number_validation(char *f_item, char *s_item);
 
-void	check_input(int argc, char **argv)
+int	invalid_input(char **argv, int argc)
 {
 	int	i;
 
 	i = 1;
+	if (ft_is_duplicated(argv, argc))
+		return (1);
+
 	while (i < argc)
 	{
-		if (ft_is_digit(argv[i]))
-			i++;
-		else
-			terminate();
+		// if (ft_is_digit(argv[i]))
+	 	i++;
 	}
 }
 
-// Tem que puxar a minha ATOI
 
-// int	*creat_arr(int argc, char **argv)
-// {
-// 	int	*arr;
-// 	int	flag;
-// 	int	i;
 
-// 	arr = (int *)malloc(sizeof(int) * (argc - 1));
-// 	flag = 0;
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		arr[i - 1] = ft_atoi(argv[i], &flag);
-// 		if (flag)
-// 		{
-// 			free(arr);
-// 			terminate();
-// 		}
-// 		i++;
-// 	}
-// 	return (arr);
-// }
-
-void	ft_is_duplicated(int *arr, int n)
+/**
+ * @brief Check if exist the same number in param
+ * @param items Arr of integers
+ * @param count Total of integers
+ */
+static int	ft_is_duplicated(char **items, int count)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < n)
+	// Start in 1. Don't need compare first param
+	i = 1;
+	while (i < count)
 	{
 		j = i + 1;
-		while (j < n)
+		while (j < count)
 		{
 			// Verify if exist the same number
-			if (arr[i] == arr[j])
+			if (ft_number_validation(items[i], items[j]) == 0)
 			{
-				free(arr);
-				terminate();
+				// Identical numbers
+				return (1);
 			}
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }
 
-static int	ft_is_digit(char *str)
+/**
+ * @brief Verify duplication and check if there are any plus (+) signal before
+ * @param f_item
+ * @param s_item
+ * @return int: Diff between a value to another. If equals, will be the same
+ */
+static int	ft_number_validation(char *f_item, char *s_item)
 {
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str)
+	int	i;
+	int	j;
+	int result;
+
+	i = 0;
+	j = i;
+	// +12 must be equal to 12
+	if (f_item[i] == '+')
 	{
-		if (*str >= '0' && *str <= '9')
-			str++;
-		else
-			return (0);
+		i++;
 	}
-	return (1);
-}
-// TODO: Get Better in this
-static void	terminate(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
+	if(s_item[j] == '+')
+	{
+		j++;
+	}
+	while (f_item[i] != '\0' && s_item[j] != '\0'
+		&& f_item[i] == s_item[j])
+	{
+		// If same, next to the next digit
+		i++;
+		j++;
+	}
+
+	// Returning by ASCII diff
+	result = (unsigned char)f_item[i] - (unsigned char)s_item[j];
+	return (result);
 }
