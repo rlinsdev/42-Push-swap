@@ -39,7 +39,8 @@ SRC_FILES =	ft_free.c \
 			ft_strdup.c \
 			ft_strjoin.c \
 			ft_memcmp.c \
-			ft_strncmp.c
+			ft_strncmp.c \
+			ft_atoi.c
 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
