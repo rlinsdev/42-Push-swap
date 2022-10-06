@@ -10,7 +10,8 @@
 
 
 <!-- https://hits.dwyl.com/ -->
-[![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat)](http://hits.dwyl.com/rlinsdev/42-Push-swap)
+<!-- [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat)](http://hits.dwyl.com/rlinsdev/42-Push-swap) -->
+[![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap)
 
 <!-- [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap) -->
 
@@ -39,7 +40,7 @@ $> cmd2
 
 
 
-# More information
+## `More information`
 
 
 • Libft allowed.
@@ -49,6 +50,10 @@ $> cmd2
 • No leaks are allowed.
 
 • Norma must be run.
+
+• Linked List
+
+•  Algorithm that sorts by index and position.
 
 ### `Operations`
 
