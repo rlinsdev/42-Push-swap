@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/05 08:27:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/05 23:11:59 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	start(int argc, char **argv)
 
 	if (argc >= 2)
 	{
-		check_input(argc, argv);
+		// check_input(argc, argv);
 		// arr = creat_arr(argc, argv);
 		// ft_is_duplicated(arr, argc - 1);
 

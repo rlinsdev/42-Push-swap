@@ -6,40 +6,55 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/04 19:17:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/06 11:19:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-static void	swap_nodes(t_node *first, t_node *second);
+static void	swap_stacks(t_stack *first, t_stack *second);
 
-// TODO
-void	swap_a(t_node *node_a)
+/**
+ * @brief
+ * Will not be used
+ * @param stack_a
+ */
+void	swap_a(t_stack *stack_a)
 {
-	swap_nodes(node_a, node_a->next);
+	swap_stacks(stack_a, stack_a->next);
 	write(1, "sa\n", 3);
 }
 
-void	swap_b(t_node *node_b)
+/**
+ * @brief
+ *  * Will not be used
+ * @param stack_b
+ */
+void	swap_b(t_stack *stack_b)
 {
-	swap_nodes(node_b, node_b->next);
+	swap_stacks(stack_b, stack_b->next);
 	write(1, "sb\n", 3);
 }
 
-void	swap_swap (t_node *node_a, t_node *node_b)
+/**
+ * @brief
+ * Will not be used
+ * @param stack_a
+ * @param stack_b
+ */
+void	swap_swap(t_stack *stack_a, t_stack *stack_b)
 {
-	swap_nodes(node_a, node_a->next);
-	swap_nodes(node_b, node_b->next);
+	swap_stacks(stack_a, stack_a->next);
+	swap_stacks(stack_b, stack_b->next);
 	write(1, "ss\n", 3);
 }
 
 /**
- * @brief Will swap the nodes passed by param
+ * @brief Will swap the stacks passed by param
  * @param first First Element
  * @param second Second Element
  */
-static void	swap_nodes(t_node *first, t_node *second)
+static void	swap_stacks(t_stack *first, t_stack *second)
 {
 	int		aux;
 

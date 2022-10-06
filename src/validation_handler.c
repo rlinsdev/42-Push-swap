@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/05 08:17:25 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/05 08:36:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,30 @@ void	check_input(int argc, char **argv)
 			terminate();
 	}
 }
+
+// Tem que puxar a minha ATOI
+
+// int	*creat_arr(int argc, char **argv)
+// {
+// 	int	*arr;
+// 	int	flag;
+// 	int	i;
+
+// 	arr = (int *)malloc(sizeof(int) * (argc - 1));
+// 	flag = 0;
+// 	i = 1;
+// 	while (i < argc)
+// 	{
+// 		arr[i - 1] = ft_atoi(argv[i], &flag);
+// 		if (flag)
+// 		{
+// 			free(arr);
+// 			terminate();
+// 		}
+// 		i++;
+// 	}
+// 	return (arr);
+// }
 
 void	ft_is_duplicated(int *arr, int n)
 {
