@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 18:36:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/09/25 10:38:00 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 08:48:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define NEG_PTR		"FFFFFFFF"
 # endif
 
+int		ft_atoi(const char *str);
 void	ft_free(char* ptr);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);

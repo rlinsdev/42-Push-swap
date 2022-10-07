@@ -6,11 +6,11 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 23:31:12 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 14:48:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 08:47:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 int	ft_atoi(const char *str)
 {
