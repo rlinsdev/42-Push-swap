@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 14:24:41 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 09:26:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	start(int argc, char **argv)
 		// add_index(list_a, arr);
 		// markup_head(list_a);
 		// push_swap(list_a);
+		free_stack_linked(&stack_a);
 	}
 	return (0);
 }

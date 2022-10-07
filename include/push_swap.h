@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 09:13:31 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 09:24:10 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,22 @@ t_stack	*array_to_stack(char** argv, int argc);
 
 /**
  * @brief Get the last stack object
- *
  * @param stack
  * @return t_stack*
  */
 t_stack *get_last_stack(t_stack *stack);
+
+/**
+ * @brief How was used malloc to generate a stack object, we must free this
+ * memory allocation in linked list
+ * @param stack loop through all linked stacks
+ */
+void	free_stack_linked(t_stack **stack);
+
+
+
+
+
 
 /**
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.
