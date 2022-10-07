@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 12:12:10 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 09:13:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 // # include <fcntl.h> // To Open a file
 // # include <sys/wait.h> // waitpid
 # include <stdlib.h> // malloc
+//# include <limits.h> // MAXINT
 
 // Linked List
 typedef struct s_stack
@@ -45,10 +46,26 @@ int	start(int argc, char **argv);
 /**
  * @brief Verify if param is correct. Not allowed duplicate, spaces. Just number
  * @param argv Vector of args
- * @param argc Cout of args
+ * @param argc Count of args
  * @return int: Input invalid (1) Input Valid (0)
  */
 int	invalid_input(char **argv, int argc);
+
+/**
+ * @brief Will populate stack_a with values in array
+ * @param argv Vector of args
+ * @param argc Count of args
+ * @return t_stack* filled
+ */
+t_stack	*array_to_stack(char** argv, int argc);
+
+/**
+ * @brief Get the last stack object
+ *
+ * @param stack
+ * @return t_stack*
+ */
+t_stack *get_last_stack(t_stack *stack);
 
 /**
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.

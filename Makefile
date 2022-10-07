@@ -28,7 +28,8 @@ MAKE_NOPRINT = $(MAKE) --no-print-directory
 
 # Files
 SRC_FILES = push_swap.c operation_handler.c operation_swap.c \
-			operation_rotate.c operation_push.c validation_handler.c
+			operation_rotate.c operation_push.c validation_handler.c \
+			stack_handler.c
 
 SOURCES 	= $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES 	= $(patsubst %.c, %.o, $(SRC_FILES))
