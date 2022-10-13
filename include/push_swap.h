@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 09:24:10 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/07 15:35:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct s_stack
 	int	pos; // Essential to sort algorithm. (Is like the index in array)
 	int tar_pos; // Target position in Stack A
 	int	cost_a; // how many steps to rotate Stack A
-	int cost_b; // how many steps to rotate Stack B
+	int	cost_b; // how many steps to rotate Stack B
+	int	size;
 	struct s_stack *next;
 }	t_stack;
 
@@ -74,6 +75,12 @@ t_stack *get_last_stack(t_stack *stack);
 void	free_stack_linked(t_stack **stack);
 
 
+/**
+ * @brief Get the stack size
+ * @param stack will check through all items
+ * @return int
+ */
+int	get_stack_size(t_stack	*stack);
 
 
 

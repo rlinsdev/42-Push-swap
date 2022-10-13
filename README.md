@@ -86,6 +86,7 @@ $> make norma
 ```
 
 # Videos
+• Linked List - https://www.youtube.com/watch?v=7bAPics2a5o&list=PL3ZslI15yo2r-gHJtjORRMRKMSNRpf7u5&index=48
 
 
 
