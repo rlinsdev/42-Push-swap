@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 14:13:36 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 07:00:30 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@ static int	ft_is_number(char *arg)
 	// Signal before number, just jump next value
 	if ((arg[i] == '-' || arg[i] == '+') && arg[i + 1] != '\0')
 		i++;
+	// Verify char by char in param passed
 	while (arg[i] && ft_is_valid_char_number(arg[i]))
 		i++;
-	if (arg[i] != '\0' && !ft_is_valid_char_number(arg[i]))
+	// if (arg[i] != '\0' && !ft_is_valid_char_number(arg[i]))
+	// Next value must to be null (byte null)
+	if (arg[i] != '\0')
 		return (0); // Invalid
 	return (1); // OK
 }

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 15:40:13 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 08:19:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,43 @@ static t_stack *init_stack(int value)
 	return (new_stack);
 }
 
-void	update_stack_index(t_stack *stack_a)
+void	init_stack_index(t_stack *stack_a, int stack_size)
 {
+	int		value;
+	t_stack	*ptr_aux;
+	t_stack	*highest_stack;
 
+	while (--stack_size > 0)
+	{
+		ptr_aux = stack_a;
+		value = INT_MIN;
+		highest_stack = NULL;
+
+		// Loop in all elements. Increment will be next, until null
+		while (ptr_aux)
+		{
+			// if (ptr_aux->value == INT_MIN)
+			// TODO: Testar com int_min
+			if (ptr_aux->value == INT_MIN && ptr_aux->index == 0)
+				ptr_aux->index = 1;
+			// Update aux var, verifying if index still 0
+			if (ptr_aux->value > value && ptr_aux->index == 0)
+			{
+				// Update aux variable with the lowest value founded
+				value = ptr_aux->value;
+				highest_stack = ptr_aux;
+				ptr_aux = stack_a;
+			}
+			else
+			{
+				ptr_aux = ptr_aux->next;
+			}
+		}
+		// Update the highest value to correct index
+		// if (highest_stack != NULL)
+		if (highest_stack)
+			highest_stack->index = stack_size;
+	}
 }
 
 int	get_stack_size(t_stack	*stack)

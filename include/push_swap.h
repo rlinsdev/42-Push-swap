@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 15:35:14 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 08:11:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 	int tar_pos; // Target position in Stack A
 	int	cost_a; // how many steps to rotate Stack A
 	int	cost_b; // how many steps to rotate Stack B
-	int	size;
+	// int	size;
 	struct s_stack *next;
 }	t_stack;
 
@@ -82,6 +82,15 @@ void	free_stack_linked(t_stack **stack);
  */
 int	get_stack_size(t_stack	*stack);
 
+/**
+ * @brief Update the index in each value in stack. The index will be compared
+ * with the actual value to be order.
+ * This Assigned will be make from the highest to the lower.
+ * @param stack_a
+ * @param stack_size
+ * @sample: values: [10], [5], [-9]
+ * 			Index:	[0],  [1], [2]*/
+void	init_stack_index(t_stack *stack_a, int stack_size);
 
 
 
