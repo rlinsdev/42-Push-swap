@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 08:11:55 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 10:54:21 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,25 @@ int	get_stack_size(t_stack	*stack);
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
 
+/**
+ * @brief Verify if the stack is sorted. Will help us to choose the type of
+ * method choose to sort the pile
+ * @param stack_a
+ * @return (1) if sorted. (0) if mess pile
+ */
+int		is_stack_sorted(t_stack *stack_a);
+
+
+/**
+ * @brief When stack have just 3 items, this will bhe the best sort method
+ * @param stack_a
+ */
+void	simple_sort(t_stack **stack_a);
+
 
 /**
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.
- * Do nothing if there is only one or no elements.
+ * Do nothing if there is only one or no elements. [OK]
  * @param stack_a
  * @param stack_b
  */
@@ -126,19 +141,18 @@ void	push_b(t_stack *stack_a, t_stack *stack_b);
  * @param stack_a
  * @param stack_b
  */
-void	rotate_a(t_stack *stack_a);
-void	rotate_b(t_stack *stack_b);
-void	rotate_rotate(t_stack *stack_a, t_stack *stack_b);
+void	rotate_a(t_stack **stack_a);
+void	rotate_b(t_stack **stack_b);
+void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 /**
  * @brief rra (reverse rotate a): Shift down all elements of stack a by 1.
  * The last element becomes the first one.
  * @param stack_a
- * @param stack_b
  */
-void	reverse_rotate_a(t_stack **stack_a, t_stack **stack_b);
-void	reverse_rotate_b(t_stack **stack_a, t_stack **stack_b);
-void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
+void	r_rotate_a(t_stack *stack_a);
+void	r_rotate_b(t_stack *stack_b);
+void	r_rotate(t_stack *stack_a, t_stack *stack_b);
 
 // int quick();
 // int merge_main();
@@ -146,5 +160,6 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 // void	radixsort();
 // void	radixsort2();
 // void radixsort3();
+void	test_print_list(t_stack *stack_a);
 
 #endif

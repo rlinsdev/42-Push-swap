@@ -27,7 +27,7 @@ MKDIR 		 = mkdir -p
 MAKE_NOPRINT = $(MAKE) --no-print-directory
 
 # Files
-SRC_FILES = push_swap.c operation_swap.c \
+SRC_FILES = push_swap.c operation_swap.c sort.c operation_r_rotate.c \
 			operation_rotate.c operation_push.c validation_handler.c \
 			stack_handler.c free_exit_handler.c
 
