@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 10:54:21 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 14:07:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,19 @@ void	simple_sort(t_stack **stack_a);
 
 
 /**
+ * @brief Core of program. Responsible to sort more than 3 integers. Send all
+ * element to B, but 3. Find current position. Calculate target position. Check
+ * the cost of actions. Take action
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ * @param stack_size Size of stack
+ */
+void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
+
+
+/** [OK]
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.
- * Do nothing if there is only one or no elements. [OK]
+ * Do nothing if there is only one or no elements.
  * @param stack_a
  * @param stack_b
  */
@@ -125,17 +136,17 @@ void	swap_swap(t_stack *stack_a, t_stack *stack_b);
  * @param stack_a
  * @param stack_b
  */
-void	push_a(t_stack *stack_a, t_stack *stack_b);
+void	push_a(t_stack **stack_a, t_stack **stack_b);
 
-/**
+/** [OK]
  * @brief (push b): Take the first element at the top of a and put it at the
  * top of b. Do nothing if a is empty.
  * @param stack_a
  * @param stack_b
  */
-void	push_b(t_stack *stack_a, t_stack *stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
 
-/**
+/** [OK]
  * @brief ra (rotate a): Shift up all elements of stack a by 1.
  * The first element becomes the last one
  * @param stack_a
