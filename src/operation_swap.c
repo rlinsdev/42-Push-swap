@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 11:19:23 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 08:45:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 static void	swap_stacks(t_stack *first, t_stack *second);
 
-/**
- * @brief
- * Will not be used
- * @param stack_a
- */
 void	swap_a(t_stack *stack_a)
 {
 	swap_stacks(stack_a, stack_a->next);

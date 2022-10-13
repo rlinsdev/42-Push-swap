@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 08:35:55 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 08:55:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size);
 static int	is_stack_sorted(t_stack *stack_a);
+static void	test_print_list(t_stack *stack_a);
 
 int	start(int argc, char **argv)
 {
@@ -36,15 +37,35 @@ int	start(int argc, char **argv)
 		}
 		// pass Array to Stack
 		stack_a = array_to_stack(argv, argc);
+
+		// TODO: Remove:
+		ft_printf("After Sort list:\n");
+		test_print_list(stack_a);
+
 		// get Stack size
 		stack_size = get_stack_size(stack_a);
 		init_stack_index(stack_a, stack_size);
 		best_sort_alg(&stack_a, &stack_b, stack_size);
 
+		// TODO: Remove:
+		ft_printf("Before Sort list:\n");
+		test_print_list(stack_a);
 
 		free_stack_linked(&stack_a);
 	}
 	return (0);
+}
+
+static void	test_print_list(t_stack *stack_a)
+{
+	t_stack *temp = stack_a;
+
+	while (temp != NULL)
+	{
+		printf("%d -", temp->value);
+		temp = temp->next;
+	}
+	printf("\n");
 }
 
 /**
@@ -56,7 +77,8 @@ int	start(int argc, char **argv)
  */
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-
+	if (stack_size == 2 && !is_stack_sorted(*stack_a))
+		swap_a(*stack_a);
 }
 
 /**
