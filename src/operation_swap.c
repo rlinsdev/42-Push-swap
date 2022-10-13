@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 08:45:35 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 10:53:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	swap_a(t_stack *stack_a)
 {
 	swap_stacks(stack_a, stack_a->next);
 	write(1, "sa\n", 3);
+	test_print_list(stack_a);
 }
 
 /**

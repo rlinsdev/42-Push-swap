@@ -6,15 +6,14 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 08:55:15 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 10:54:37 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size);
-static int	is_stack_sorted(t_stack *stack_a);
-static void	test_print_list(t_stack *stack_a);
+// static void	test_print_list(t_stack *stack_a);
 
 int	start(int argc, char **argv)
 {
@@ -56,7 +55,7 @@ int	start(int argc, char **argv)
 	return (0);
 }
 
-static void	test_print_list(t_stack *stack_a)
+void	test_print_list(t_stack *stack_a)
 {
 	t_stack *temp = stack_a;
 
@@ -77,17 +76,14 @@ static void	test_print_list(t_stack *stack_a)
  */
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
+	// 2 values = 1 action
 	if (stack_size == 2 && !is_stack_sorted(*stack_a))
 		swap_a(*stack_a);
+	else if (stack_size == 3)
+		simple_sort(stack_a);
 }
 
-/**
- * @brief Verify if the stack is sorted. Will help us to choose the type of
- * method choose to sort the pile
- * @param stack_a
- * @return (1) if sorted. (0) if mess pile
- */
-static int	is_stack_sorted(t_stack *stack_a)
+int	is_stack_sorted(t_stack *stack_a)
 {
 	while (stack_a->next != NULL)
 	{
