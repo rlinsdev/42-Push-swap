@@ -6,20 +6,41 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/06 11:18:35 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 13:43:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-// TODO
-void	push_a(t_stack *stack_a, t_stack *stack_b)
+static void	push(t_stack **stack_orig, t_stack **stack_dest);
+
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
+	push(stack_b, stack_a);
 	write(1, "pa\n", 3);
 }
 
-// TODO
-void	push_b(t_stack *stack_a, t_stack *stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
-		write(1, "pa\n", 3);
+	push(stack_a, stack_b);
+	write(1, "pb\n", 3);
+}
+
+/**
+ * @brief Push/send the top element of stack
+ *
+ * @param stack_orig
+ * @param stack_dest
+ */
+static void	push(t_stack **stack_orig, t_stack **stack_dest)
+{
+	t_stack	*tmp;
+
+	// Do Nothing if dest is null.
+	if (*stack_orig == NULL)
+		return ;
+	tmp = (*stack_orig)->next;
+	(*stack_orig)->next = *stack_dest;
+	*stack_dest = *stack_orig;
+	*stack_orig = tmp;
 }
