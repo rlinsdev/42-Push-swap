@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 10:54:37 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/13 14:14:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	start(int argc, char **argv)
 			ft_printf("Invalid arguments\n");
 			exit (1);
 		}
+		// Initialize Stack_b
+		stack_b = NULL;
 		// pass Array to Stack
 		stack_a = array_to_stack(argv, argc);
 
@@ -55,9 +57,9 @@ int	start(int argc, char **argv)
 	return (0);
 }
 
-void	test_print_list(t_stack *stack_a)
+void	test_print_list(t_stack *stack)
 {
-	t_stack *temp = stack_a;
+	t_stack *temp = stack;
 
 	while (temp != NULL)
 	{
@@ -77,10 +79,14 @@ void	test_print_list(t_stack *stack_a)
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	// 2 values = 1 action
-	if (stack_size == 2 && !is_stack_sorted(*stack_a))
+	if (is_stack_sorted(*stack_a))
+		return ;
+	else if (stack_size == 2)
 		swap_a(*stack_a);
 	else if (stack_size == 3)
 		simple_sort(stack_a);
+	else
+		core_sort_stack(stack_a, stack_b, stack_size);
 }
 
 int	is_stack_sorted(t_stack *stack_a)
