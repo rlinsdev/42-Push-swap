@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 15:12:56 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:00:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	r_rotate_stack(t_stack *stack);
 static t_stack	*get_stack_tail(t_stack *stack);
 static t_stack	*get_stack_before_tail(t_stack *stack);
 
-// TODO
 void	r_rotate_a(t_stack *stack_a)
 {
 	r_rotate_stack(stack_a);
