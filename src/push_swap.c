@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 14:14:23 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 16:52:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	test_print_list(t_stack *stack)
 
 	while (temp != NULL)
 	{
-		printf("%d -", temp->value);
+		printf("[%d] ", temp->value);
 		temp = temp->next;
 	}
 	printf("\n");
