@@ -11,7 +11,7 @@
 "args": [10, 5,-9, 14],
 "args": [1, 3, 4, 5, 9],
 "args": [9, 5 ,1, 3, 4], erro ainda sim
-"args": [3, 5 ,1, 9, 4, 50, 80, -99], erro
+"args": [3, 5 ,1, 9, 4, 50, 80, -99], erro sim. Está comendo números
 "args": [5, 4 ,3, 2, 1],
 
 MEU INDEX ESTÁ COMEÇANDO COM ZERO. O DELE COM 1.
