@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 08:19:48 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 07:44:07 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ static t_stack *init_stack(int value)
 		return (NULL);
 
 	new_stack->value = value;
-	new_stack->index = 0;
+	// new_stack->index = 0;
+	new_stack->index = -1;
 	new_stack->pos = -1;
 	new_stack->tar_pos = -1;
 	new_stack->cost_a = -1;
