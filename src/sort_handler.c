@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 16:18:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:12:53 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ static void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a
 		(*cost_a)++;
 		(*cost_b)++;
 		// do_rrr(stack_a, stack_b);
-		r_rotate(*stack_a, *stack_b);
+		rr_rotate(*stack_a, *stack_b);
 		// do_rrr(stack_a, stack_b);
 	}
 }
@@ -172,7 +172,7 @@ static void	do_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, in
 		(*cost_a)--;
 		(*cost_b)--;
 		// do_rr(a, b);
-		r_rotate(*stack_a, *stack_b);
+		rotate_rotate(stack_a, stack_b);
 	}
 }
 

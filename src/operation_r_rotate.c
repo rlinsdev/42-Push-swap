@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 17:00:12 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:09:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	r_rotate_b(t_stack *stack_b)
 	test_print_list(stack_b);
 }
 
-void	r_rotate(t_stack *stack_a, t_stack *stack_b)
+void	rr_rotate(t_stack *stack_a, t_stack *stack_b)
 {
 	r_rotate_stack(stack_a);
 	r_rotate_stack(stack_b);
@@ -60,7 +60,7 @@ static void	r_rotate_stack(t_stack *stack)
 /**
  * @brief will return the last element
  * @param stack
- * @return t_stack*
+ * @return t_stack* Pointer to last stack
  */
 static t_stack	*get_stack_tail(t_stack *stack)
 {

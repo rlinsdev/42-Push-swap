@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 16:59:16 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:09:06 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,19 @@ void	push_b(t_stack **stack_a, t_stack **stack_b);
  * @param stack_b
  */
 void	rotate_a(t_stack **stack_a);
+
+/**
+ * @brief
+ *
+ * @param stack_b
+ */
 void	rotate_b(t_stack **stack_b);
+
+/**
+ * @brief ra (rotate a) and rb (rotate b) at the same time
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ */
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
@@ -184,14 +196,14 @@ void	r_rotate_b(t_stack *stack_b);
 /** [OK]
  * @brief
  *
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
-void	r_rotate(t_stack *stack_a, t_stack *stack_b);
+void	rr_rotate(t_stack *stack_a, t_stack *stack_b);
 
 /**
  * @brief help us to verify how the list is in this moment
- * @param stack_a
+ * @param stack_a Stack with integers
  */
 void	test_print_list(t_stack *stack_a);
 
