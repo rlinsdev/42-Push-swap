@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 10:53:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:27:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,12 @@ void	swap_a(t_stack *stack_a)
 	test_print_list(stack_a);
 }
 
-/**
- * @brief
- *  * Will not be used
- * @param stack_b
- */
 void	swap_b(t_stack *stack_b)
 {
 	swap_stacks(stack_b, stack_b->next);
 	write(1, "sb\n", 3);
 }
 
-/**
- * @brief
- * Will not be used
- * @param stack_a
- * @param stack_b
- */
 void	swap_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	swap_stacks(stack_a, stack_a->next);

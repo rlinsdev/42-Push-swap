@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 17:09:06 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 17:27:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ int	get_stack_size(t_stack	*stack);
  * @param stack_a
  * @param stack_size
  * @sample: values: [10], [5], [-9]
- * 			Index:	[0],  [1], [2]*/
+ * 			Index:	[0],  [1], [2]
+ */
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
 // static void	get_position(t_stack **stack);
@@ -134,45 +135,56 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b);
 /** [OK]
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.
  * Do nothing if there is only one or no elements.
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	swap_a(t_stack *stack_a);
 
+/** (Deprecated)
+ * @brief (swap b): Swap the first 2 elements at the top of stack b.
+ * Do nothing if there is only one or no elements.
+ * @param stack_b Auxiliary stack
+ */
 void	swap_b(t_stack *stack_b);
+
+/** (Deprecated)
+ * @brief sa (Swap A) and sb (Swap B) at the same time.
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ */
 void	swap_swap(t_stack *stack_a, t_stack *stack_b);
 
-/**
+/** [OK]
  * @brief pa (push a): Take the first element at the top of b and put it at the * top of a. Do nothing if b is empty.
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
  * @brief (push b): Take the first element at the top of a and put it at the
  * top of b. Do nothing if a is empty.
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	push_b(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
  * @brief ra (rotate a): Shift up all elements of stack a by 1.
  * The first element becomes the last one
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	rotate_a(t_stack **stack_a);
 
-/**
- * @brief
- *
- * @param stack_b
+/** [OK]
+ * @brief (rotate b): Shift up all elements of stack b by 1.
+ * The first element becomes the last one.
+ * @param stack_b Auxiliary stack
  */
 void	rotate_b(t_stack **stack_b);
 
-/**
+/** [OK]
  * @brief ra (rotate a) and rb (rotate b) at the same time
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
@@ -182,20 +194,19 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 /** [OK]
  * @brief rra (reverse rotate a): Shift down all elements of stack a by 1.
  * The last element becomes the first one.
- * @param stack_a
+ * @param stack_a Stack with integers
  */
 void	r_rotate_a(t_stack *stack_a);
 
 /** [OK]
- * @brief
- *
- * @param stack_b
+ * @brief (reverse rotate b): Shift down all elements of stack b by 1.
+ * The last element becomes the first one.
+ * @param stack_b Auxiliary stack
  */
 void	r_rotate_b(t_stack *stack_b);
 
 /** [OK]
- * @brief
- *
+ * @brief rra and rrb at the same time.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
