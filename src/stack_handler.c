@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 07:44:07 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/14 16:36:20 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ static t_stack *init_stack(int value)
 		return (NULL);
 
 	new_stack->value = value;
-	// new_stack->index = 0;
-	new_stack->index = -1;
+	new_stack->index = 0;
 	new_stack->pos = -1;
 	new_stack->tar_pos = -1;
 	new_stack->cost_a = -1;
@@ -94,7 +93,7 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 	t_stack	*ptr_aux;
 	t_stack	*highest_stack;
 
-	while (--stack_size > 0)
+	while (stack_size > 0)
 	{
 		ptr_aux = stack_a;
 		value = INT_MIN;
@@ -103,7 +102,6 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 		// Loop in all elements. Increment will be next, until null
 		while (ptr_aux)
 		{
-			// if (ptr_aux->value == INT_MIN)
 			// TODO: Testar com int_min
 			if (ptr_aux->value == INT_MIN && ptr_aux->index == 0)
 				ptr_aux->index = 1;
@@ -121,9 +119,9 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 			}
 		}
 		// Update the highest value to correct index
-		// if (highest_stack != NULL)
-		if (highest_stack)
+		if (highest_stack != NULL)
 			highest_stack->index = stack_size;
+		stack_size--;
 	}
 }
 
@@ -132,6 +130,8 @@ int	get_stack_size(t_stack	*stack)
 	int	i;
 
 	i = 0;
+	// if (!stack)
+	// 	return (0);
 	while (stack)
 	{
 		stack = stack->next;
