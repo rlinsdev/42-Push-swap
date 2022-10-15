@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:09:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:15:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,42 @@ int	get_lowest_index_position(t_stack **stack);
  */
 void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
 stack_size);
+
+/**
+ * @brief
+ *
+ * @param stack_a
+ * @param stack_b
+ * @param cost_a
+ * @param cost_b
+ */
+void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+
+/**
+ * @brief
+ *
+ * @param stack_a
+ * @param stack_b
+ * @param cost_a
+ * @param cost_b
+ */
+void	do_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+
+/**
+ * @brief
+ *
+ * @param stack_b
+ * @param cost
+ */
+void	do_rotate_b(t_stack **stack_b, int *cost);
+
+/**
+ * @brief
+ *
+ * @param stack_a
+ * @param cost
+ */
+void	do_rotate_a(t_stack **stack_a, int *cost);
 
 /**
  * @brief
