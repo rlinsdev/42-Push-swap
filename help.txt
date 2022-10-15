@@ -6,13 +6,13 @@
 [OK] "args": [3, 1, 2],
 [OK] "args": [10, 5,-9],
 [OK] "args": [4, 3, 2, 1],
+[OK] "args": [5, 4 ,3, 2, 1],
+[OK] "args": [10, 5,-9, 14],
+[OK] "args": [1, 3, 4, 5, 9],
+[OK] "args": [9, 5 ,1, 3, 4],
+[OK] "args": [3, 5 ,1, 9, 4, 50, 80, -99],
 
-"args": [10, 5,-9, 14], erro
-"args": [1, 3, 4, 5, 9],
-"args": [9, 5 ,1, 3, 4], erro ainda sim
-"args": [3, 5 ,1, 9, 4, 50, 80, -99], erro sim. Está comendo números
-"args": [5, 4 ,3, 2, 1],
-
+TODO:
 MEU INDEX ESTÁ COMEÇANDO COM ZERO. O DELE COM 1.
 POSIÇÃO DELE COMEÇA COM ZERO
 /**/
