@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:15:22 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:53:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	if (is_stack_sorted(*stack_a))
 		return ;
 	else if (stack_size == 2)
-		swap_a(*stack_a);
+		swap_a(stack_a);
 	else if (stack_size == 3)
 		simple_sort(stack_a);
 	else

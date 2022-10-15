@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:55:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,21 +138,21 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b);
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
-void	swap_a(t_stack *stack_a);
+void	swap_a(t_stack **stack_a);
 
 /** (Deprecated)
  * @brief (swap b): Swap the first 2 elements at the top of stack b.
  * Do nothing if there is only one or no elements.
  * @param stack_b Auxiliary stack
  */
-void	swap_b(t_stack *stack_b);
+void	swap_b(t_stack **stack_b);
 
 /** (Deprecated)
  * @brief sa (Swap A) and sb (Swap B) at the same time.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
-void	swap_swap(t_stack *stack_a, t_stack *stack_b);
+void	swap_swap(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
  * @brief pa (push a): Take the first element at the top of b and put it at the * top of a. Do nothing if b is empty.

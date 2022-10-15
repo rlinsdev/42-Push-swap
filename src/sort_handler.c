@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:21:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:55:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	simple_sort(t_stack **stack_a)
 		r_rotate_a(*stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		// do_sa(*stack_a);
-		swap_a(*stack_a);
+		swap_a(stack_a);
 }
 
 static int	find_highest_index(t_stack *stack)
@@ -309,7 +309,7 @@ stack_size)
 		i++;
 	}
 	// 2 to 6 items in stack
-	while (stack_size - pushed > 3)
+	while ((stack_size - pushed) > 3)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
