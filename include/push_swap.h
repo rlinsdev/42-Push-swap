@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:02:24 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:09:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,8 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
 /**
  * @brief Get the cost object
  *
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
@@ -138,6 +138,14 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b);
  * @return int
  */
 int	get_lowest_index_position(t_stack **stack);
+
+/**
+ * @brief Send all integers to B, but stay with 3 in stack A.
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ */
+void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
+stack_size);
 
 /**
  * @brief
