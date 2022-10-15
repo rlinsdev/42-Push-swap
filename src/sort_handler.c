@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 11:03:29 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 11:20:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	simple_sort(t_stack **stack_a)
 		rotate_a(stack_a);
 	else if ((*stack_a)->next->index == high_index)
 		// do_rra(stack_a);
-		r_rotate_a(*stack_a);
+		r_rotate_a(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		// do_sa(*stack_a);
 		swap_a(stack_a);
@@ -160,7 +160,7 @@ static void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a
 		(*cost_a)++;
 		(*cost_b)++;
 		// do_rrr(stack_a, stack_b);
-		rr_rotate(*stack_a, *stack_b);
+		rr_rotate(stack_a, stack_b);
 		// do_rrr(stack_a, stack_b);
 	}
 }
@@ -190,7 +190,7 @@ static void	do_rotate_a(t_stack **stack_a, int *cost)
 		else if (*cost < 0)
 		{
 			// do_rra(stack_a);
-			r_rotate_a(*stack_a);
+			r_rotate_a(stack_a);
 			(*cost)++;
 		}
 	}
@@ -209,7 +209,7 @@ static void	do_rotate_b(t_stack **stack_b, int *cost)
 		}
 		else if (*cost < 0)
 		{
-			r_rotate_b(*stack_b);
+			r_rotate_b(stack_b);
 			// do_rrb(stack_b);
 			(*cost)++;
 		}
@@ -256,7 +256,7 @@ static void	shift_stack(t_stack **stack_a)
 	{
 		while (lowest_pos < stack_size)
 		{
-			r_rotate_a(*stack_a);
+			r_rotate_a(stack_a);
 			// do_rra(stack_a);
 			lowest_pos++;
 		}

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:55:49 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 11:19:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,21 +196,21 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
  * The last element becomes the first one.
  * @param stack_a Stack with integers
  */
-void	r_rotate_a(t_stack *stack_a);
+void	r_rotate_a(t_stack **stack_a);
 
 /** [OK]
  * @brief (reverse rotate b): Shift down all elements of stack b by 1.
  * The last element becomes the first one.
  * @param stack_b Auxiliary stack
  */
-void	r_rotate_b(t_stack *stack_b);
+void	r_rotate_b(t_stack **stack_b);
 
 /** [OK]
  * @brief rra and rrb at the same time.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
-void	rr_rotate(t_stack *stack_a, t_stack *stack_b);
+void	rr_rotate(t_stack **stack_a, t_stack **stack_b);
 
 /**
  * @brief help us to verify how the list is in this moment
