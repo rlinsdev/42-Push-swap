@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 11:20:48 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 14:56:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	do_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, in
 static void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 static void	do_rotate_b(t_stack **stack_b, int *cost);
 static void	do_rotate_a(t_stack **stack_a, int *cost);
-static int	get_lowest_index_position(t_stack **stack);
 static int	find_highest_index(t_stack *stack);
 
 void	simple_sort(t_stack **stack_a)
@@ -214,30 +213,6 @@ static void	do_rotate_b(t_stack **stack_b, int *cost)
 			(*cost)++;
 		}
 	}
-}
-
-// Add in class Position
-static int	get_lowest_index_position(t_stack **stack)
-{
-	t_stack	*tmp;
-	int		lowest_index;
-	int		lowest_pos;
-
-	tmp = *stack;
-	lowest_index = INT_MAX;
-	update_position(stack);
-	lowest_pos = tmp->pos;
-	while (tmp)
-	{
-		if (tmp->index < lowest_index)
-		{
-			lowest_index = tmp->index;
-			lowest_pos = tmp->pos;
-		}
-		tmp = tmp->next;
-	}
-	// return (lowest_pos - 1); // TODO: Fix moment. Revisit.
-	return (lowest_pos); // TODO: Fix moment. Revisit.
 }
 
 /**

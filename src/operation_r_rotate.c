@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 11:22:29 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 14:52:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static t_stack	*get_stack_tail(t_stack *stack)
 /**
  * @brief Get the before last element
  * @param stack
- * @return t_stack*
+ * @return t_stack* before the end
  */
 static t_stack	*get_stack_before_tail(t_stack *stack)
 {

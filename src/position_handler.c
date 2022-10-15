@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 11:03:32 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 14:56:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,27 @@ void	update_position(t_stack **stack)
 		stack_tmp = stack_tmp->next;
 		i++;
 	}
+}
+
+int	get_lowest_index_position(t_stack **stack)
+{
+	t_stack	*tmp;
+	int		lowest_index;
+	int		lowest_pos;
+
+	tmp = *stack;
+	lowest_index = INT_MAX;
+	update_position(stack);
+	lowest_pos = tmp->pos;
+	while (tmp)
+	{
+		if (tmp->index < lowest_index)
+		{
+			lowest_index = tmp->index;
+			lowest_pos = tmp->pos;
+		}
+		tmp = tmp->next;
+	}
+	// return (lowest_pos - 1); // TODO: Fix moment. Revisit.
+	return (lowest_pos); // TODO: Fix moment. Revisit.
 }

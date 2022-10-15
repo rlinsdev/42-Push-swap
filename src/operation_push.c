@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 14:51:45 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 }
 
 /**
- * @brief Push/send the top element of stack
- *
- * @param stack_orig
- * @param stack_dest
+ * @brief Push/send the top element of a origin stack to the dest stack
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 static void	push(t_stack **stack_orig, t_stack **stack_dest)
 {
