@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 14:56:35 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:02:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,14 @@ void	simple_sort(t_stack **stack_a);
  * @param stack_size Size of stack
  */
 void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
+
+/**
+ * @brief Get the cost object
+ *
+ * @param stack_a
+ * @param stack_b
+ */
+void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
 /**
  * @brief Get the lowest index position object

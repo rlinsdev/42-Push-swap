@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 14:56:35 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:03:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int stack_size);
 static void	shift_stack(t_stack **stack_a);
-static void	get_cost(t_stack **stack_a, t_stack **stack_b);
 static int	nb_abs(int nb);
 static void	do_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
 static void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
@@ -105,34 +104,7 @@ static void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 }
 
 
-/**
- * @brief Get the cost object
- *
- * @param stack_a
- * @param stack_b
- */
-static void	get_cost(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
-	int		size_a;
-	int		size_b;
 
-	tmp_a = *stack_a;
-	tmp_b = *stack_b;
-	size_a = get_stack_size(tmp_a);
-	size_b = get_stack_size(tmp_b);
-	while (tmp_b)
-	{
-		tmp_b->cost_b = tmp_b->pos;
-		if (tmp_b->pos > size_b / 2)
-			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-		tmp_b->cost_a = tmp_b->tar_pos;
-		if (tmp_b->tar_pos > size_a / 2)
-			tmp_b->cost_a = (size_a - tmp_b->tar_pos) * -1;
-		tmp_b = tmp_b->next;
-	}
-}
 
 static int	nb_abs(int nb)
 {
@@ -151,6 +123,8 @@ static void	do_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b
 	do_rotate_b(stack_b, &cost_b);
 	push_a(stack_a, stack_b);
 }
+
+
 // Add na classe R_rotate
 static void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
 {

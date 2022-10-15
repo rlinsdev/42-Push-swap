@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 14:56:31 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:04:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	update_position(t_stack **stack)
 	}
 }
 
+// TODO: Index or positon. Get Better name.
 int	get_lowest_index_position(t_stack **stack)
 {
 	t_stack	*tmp;
