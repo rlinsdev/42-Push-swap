@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:23:01 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:30:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ static void	do_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b
 	do_rotate_b(stack_b, &cost_b);
 	push_a(stack_a, stack_b);
 }
-
 
 static int	nb_abs(int nb)
 {
