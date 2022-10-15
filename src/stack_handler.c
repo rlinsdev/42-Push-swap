@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:08:30 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:15:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,13 +127,12 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 
 int	get_stack_size(t_stack	*stack)
 {
-	int nbr_items = sizeof(stack) / sizeof(stack[0]);
-
 	int	i;
 
 	i = 0;
-	// if (!stack)
-	// 	return (0);
+	// TODO: Remove this condition
+	if (!stack)
+		return (0);
 	while (stack)
 	{
 		stack = stack->next;
