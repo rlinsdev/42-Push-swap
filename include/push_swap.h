@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:15:54 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:23:20 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,14 @@ void	do_rotate_b(t_stack **stack_b, int *cost);
  * @param cost
  */
 void	do_rotate_a(t_stack **stack_a, int *cost);
+
+/**
+ * @brief
+ *
+ * @param stack_a
+ * @param stack_b
+ */
+void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
 /**
  * @brief
