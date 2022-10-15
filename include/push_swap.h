@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 17:27:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,6 @@ void	rr_rotate(t_stack *stack_a, t_stack *stack_b);
  * @brief help us to verify how the list is in this moment
  * @param stack_a Stack with integers
  */
-void	test_print_list(t_stack *stack_a);
+void	ft_print_list(t_stack *stack_a);
 
 #endif

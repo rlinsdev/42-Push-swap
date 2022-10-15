@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 17:12:53 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -292,18 +292,18 @@ stack_size)
 			push_b(stack_a, stack_b);
 			pushed++;
 			printf("StackA: ");
-			test_print_list(*stack_a);
+			ft_print_list(*stack_a);
 			printf("StackB: ");
-			test_print_list(*stack_b);
+			ft_print_list(*stack_b);
 		}
 		else
 		{
 			// TODO: Debugar aqui dentro
 			rotate_a(stack_a);
 			printf("StackA: ");
-			test_print_list(*stack_a);
+			ft_print_list(*stack_a);
 			printf("StackB: ");
-			test_print_list(*stack_b);
+			ft_print_list(*stack_b);
 		}
 		i++;
 	}
@@ -313,8 +313,8 @@ stack_size)
 		push_b(stack_a, stack_b);
 		pushed++;
 		// printf("StackA: ");
-		// test_print_list(*stack_a);
+		// ft_print_list(*stack_a);
 		// printf("StackB: ");
-		// test_print_list(*stack_b);
+		// ft_print_list(*stack_b);
 	}
 }

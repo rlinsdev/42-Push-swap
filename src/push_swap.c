@@ -6,22 +6,16 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 16:52:14 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size);
-// static void	test_print_list(t_stack *stack_a);
 
 int	start(int argc, char **argv)
 {
-	// int sortList[] = {50, 40, 10};
-
-	// // With this it's possible discovery the size of array!
-	// int nbr_itens = sizeof(sortList) / sizeof(sortList[0]);
-
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
@@ -40,8 +34,8 @@ int	start(int argc, char **argv)
 		stack_a = array_to_stack(argv, argc);
 
 		// TODO: Remove:
-		ft_printf("After Sort list:\n");
-		test_print_list(stack_a);
+		ft_printf("Pill list:\n");
+		ft_print_list(stack_a);
 
 		// get Stack size
 		stack_size = get_stack_size(stack_a);
@@ -49,15 +43,15 @@ int	start(int argc, char **argv)
 		best_sort_alg(&stack_a, &stack_b, stack_size);
 
 		// TODO: Remove:
-		ft_printf("Before Sort list:\n");
-		test_print_list(stack_a);
+		ft_printf("Sort list:\n");
+		ft_print_list(stack_a);
 
 		free_stack_linked(&stack_a);
 	}
 	return (0);
 }
 
-void	test_print_list(t_stack *stack)
+void	ft_print_list(t_stack *stack)
 {
 	t_stack *temp = stack;
 
