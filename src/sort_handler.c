@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:55:08 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 11:03:29 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,8 @@ static int	get_lowest_index_position(t_stack **stack)
 		}
 		tmp = tmp->next;
 	}
-	return (lowest_pos - 1); // TODO: Fix moment. Revisit.
+	// return (lowest_pos - 1); // TODO: Fix moment. Revisit.
+	return (lowest_pos); // TODO: Fix moment. Revisit.
 }
 
 /**
