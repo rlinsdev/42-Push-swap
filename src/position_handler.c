@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/14 16:17:09 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 10:31:04 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index, int targ
 		}
 		tmp = tmp->next;
 	}
+	// TODO: Remove this condition. Will never happen
 	if (target_index != INT_MAX)
 		return (target_pos);
 	tmp = *stack_a;
