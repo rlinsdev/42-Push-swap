@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 16:26:40 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 07:17:38 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static void	swap(t_stack *stack)
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
+	// TODO: Other operations work with index to?
 	// Update Index
 	tmp = stack->index;
 	stack->index = stack->next->index;

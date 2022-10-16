@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 16:39:28 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 07:13:51 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
-// # include <unistd.h> //Execve, fork, dup, dump2, write, pipe
  # include <stdio.h> // Printf - Remover
-// # include <string.h> // strerror
-// # include <fcntl.h> // To Open a file
-// # include <sys/wait.h> // waitpid
 # include <stdlib.h> // malloc
-//# include <limits.h> // MAXINT
 
 //TODO: Rever a diferença do Index pra posição
 // Linked List
 typedef struct s_stack
 {
 	int value; // Integer value to sort
-	int	index; // Essential to sort algorithm
+	int	index; // Essential to sort algorithm. Where in the list it must stay
 	int	pos; // Essential to sort algorithm. (Is like the index in array)
 	int tar_pos; // Target position in Stack A
 	int	cost_a; // how many steps to rotate Stack A
 	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
-	// int	size;
 	struct s_stack *next;
 }	t_stack;
 
