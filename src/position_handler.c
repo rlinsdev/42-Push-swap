@@ -6,13 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:04:56 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 07:29:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-// get_target
 static int	update_target_position(t_stack **stack_a, int stack_b_index, int target_index, int target_pos);
 
 void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
@@ -72,18 +71,9 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index, int targ
 		}
 		tmp = tmp->next;
 	}
-	// return (target_pos - 1); // TODO: Fix moment. Revisit.
-	return (target_pos); // TODO: Fix moment. Revisit.
+	return (target_pos);
 }
 
-/**
- * @brief Update position will simple loop though all elements and put a number * in position. This must be update when the position in pill change. Will
- * initialize and update position of stack
- *		value:		[1]	[3]	[4]
- *		index:		[1]	[0]	[2]
- *		position:	[0]	[1] [2]
- * @param stack
- */
 void	update_position(t_stack **stack)
 {
 	t_stack	*stack_tmp;

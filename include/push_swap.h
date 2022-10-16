@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 07:13:51 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 07:28:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 {
 	int value; // Integer value to sort
 	int	index; // Essential to sort algorithm. Where in the list it must stay
-	int	pos; // Essential to sort algorithm. (Is like the index in array)
+	int	pos; // Essential to sort algorithm. (Is like the index in array). Will exist just upper 4
 	int tar_pos; // Target position in Stack A
 	int	cost_a; // how many steps to rotate Stack A
 	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
@@ -87,7 +87,15 @@ int	get_stack_size(t_stack	*stack);
  */
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
-// static void	get_position(t_stack **stack);
+/**
+ * @brief Update position will simple loop though all elements and put a number * in position. This must be update when the position in pill change. Will
+ * initialize and update position of stack.
+ * Position start in 0
+ *		value:		[1]	[3]	[4]
+ *		index:		[1]	[0]	[2]
+ *		position:	[0]	[1] [2]
+ * @param stack
+ */
 void	update_position(t_stack **stack);
 
 /**
@@ -206,8 +214,8 @@ t_stack	*get_stack_tail(t_stack *stack);
  */
 int	find_highest_index(t_stack *stack);
 
-/**
- * @brief
+/** [Passed]
+ * @brief The position wil be used to calculate the cost to move
  *
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
