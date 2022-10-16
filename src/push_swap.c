@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:53:43 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:20:25 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	start(int argc, char **argv)
 	t_stack	*stack_b;
 	int		stack_size;
 
-	// TODO: Put some message of invalid arguments?
 	if (argc >= 2)
 	{
 		if (invalid_input(argv, argc))
@@ -63,18 +62,20 @@ void	ft_print_list(t_stack *stack)
 	printf("\n");
 }
 
-/**
+/** [Passed]
  * @brief Responsible to find the best sort method. Just 1 method is not able to
- * sort with just a few movements.
- * @param stack_a Pile with all numbers
+ * sort with just a few movements. Mandatory in project: Sort by minimum OP
+ * possible
+ * @param stack_a Pile with all numbers (Messed)
  * @param stack_b Pile to aux to sort the numbers
  * @param stack_size size of pile numbers
  */
 static void	best_sort_alg(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	// 2 values = 1 action
+	// Just Return sorted list
 	if (is_stack_sorted(*stack_a))
 		return ;
+	// if not sorted, just swap 1 to other, in same stack
 	else if (stack_size == 2)
 		swap_a(stack_a);
 	else if (stack_size == 3)

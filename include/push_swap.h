@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:32:58 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:39:28 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ t_stack	*array_to_stack(char** argv, int argc);
 
 /**
  * @brief Get the last stack object
- * @param stack
- * @return t_stack*
+ * @param stack Linked list
+ * @return t_stack* with next point to null
  */
 t_stack *get_last_stack(t_stack *stack);
 
@@ -85,12 +85,11 @@ int	get_stack_size(t_stack	*stack);
 
 /**
  * @brief Update the index in each value in stack. The index will be compared
- * with the actual value to be order.
- * This Assigned will be make from the highest to the lower.
- * @param stack_a
- * @param stack_size
- * @sample: values: [10], [5], [-9]
- * 			Index:	[0],  [1], [2]
+ * with the actual value to be order (while inside while).
+ * @param stack_a - All register in linked list
+ * @param stack_size - How many times must to be passed
+ * @sample: values: [4], [3], [2], [1]
+ * 			Index:	[1],  [2], [3], [4]
  */
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
@@ -204,6 +203,14 @@ t_stack	*get_stack_before_tail(t_stack *stack);
  * @return t_stack* Pointer to last stack
  */
 t_stack	*get_stack_tail(t_stack *stack);
+
+/**
+ * @brief
+ *
+ * @param stack
+ * @return int
+ */
+int	find_highest_index(t_stack *stack);
 
 /**
  * @brief

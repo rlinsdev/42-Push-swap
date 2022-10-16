@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:56:53 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:26:40 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	swap_swap(t_stack **stack_a, t_stack **stack_b)
 	write(1, "ss\n", 3);
 }
 
-/**
- * @brief Will swap the stacks passed by param
- * @param stack First Element
+/** [Passed]
+ * @brief Will swap the stacks passed by param. Swap value and index
+ * @param stack Stack with 2 elements to swap
  */
 static void	swap(t_stack *stack)
 {
@@ -44,9 +44,11 @@ static void	swap(t_stack *stack)
 
 	if (stack == NULL || stack->next == NULL)
 		return ;
+	// Update Value
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
+	// Update Index
 	tmp = stack->index;
 	stack->index = stack->next->index;
 	stack->next->index = tmp;

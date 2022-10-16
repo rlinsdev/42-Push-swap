@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:37:57 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:39:42 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rr_rotate(t_stack **stack_a, t_stack **stack_b)
 }
 
 /**
- * @brief
+ * @brief Reverse Rotate Stack
  *
  * @param stack
  */

@@ -6,47 +6,29 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:23:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:39:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
 static void	shift_stack(t_stack **stack_a);
-static int	find_highest_index(t_stack *stack);
 
 void	simple_sort(t_stack **stack_a)
 {
 	int		high_index;
 	// TODO: Remove this check (is sorted)
 	// If sorted, just get out.
-	if (is_stack_sorted(*stack_a))
-		return ;
+	// if (is_stack_sorted(*stack_a))
+	// 	return ;
 	high_index = find_highest_index(*stack_a);
-	// 2 is the number when call Simple sort (0, 1, 2)
+	// 3 is the number when call Simple sort (1, 2, 3)
 	if ((*stack_a)->index == high_index)
-		// do_ra(stack_a);
 		rotate_a(stack_a);
 	else if ((*stack_a)->next->index == high_index)
-		// do_rra(stack_a);
 		r_rotate_a(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
-		// do_sa(*stack_a);
 		swap_a(stack_a);
-}
-
-static int	find_highest_index(t_stack *stack)
-{
-	int		index;
-
-	index = stack->index;
-	while (stack)
-	{
-		if (stack->index > index)
-			index = stack->index;
-		stack = stack->next;
-	}
-	return (index);
 }
 
 void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size)

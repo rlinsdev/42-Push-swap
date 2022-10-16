@@ -6,14 +6,14 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/13 07:00:30 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:51:34 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
 static int	ft_is_duplicated(char **items, int count);
-static int	ft_number_validation(char *f_item, char *s_item);
+static int	ft_number_validation(char *f_digit, char *s_digit);
 static int	ft_is_number(char *arg);
 static int	ft_is_valid_char_number(char nbr);
 
@@ -33,7 +33,7 @@ int	invalid_input(char **argv, int argc)
 	return(0); // Return OK
 }
 
-/**
+/** [Passed]
  * @brief Verify if all values are valid inputs
  * @param arg arguments
  * @return int
@@ -49,7 +49,6 @@ static int	ft_is_number(char *arg)
 	// Verify char by char in param passed
 	while (arg[i] && ft_is_valid_char_number(arg[i]))
 		i++;
-	// if (arg[i] != '\0' && !ft_is_valid_char_number(arg[i]))
 	// Next value must to be null (byte null)
 	if (arg[i] != '\0')
 		return (0); // Invalid
@@ -86,7 +85,7 @@ static int	ft_is_duplicated(char **items, int count)
 	return (0);
 }
 
-/**
+/** [passed]
  * @brief Verify if the char is a valid number
  * @param nbr
  * @return int 0 if it's not a number. 1 if is a valid number
@@ -97,13 +96,13 @@ static int	ft_is_valid_char_number(char nbr)
 	return (nbr >= '0' && nbr <= '9');
 }
 
-/**
+/** [Passed]
  * @brief Verify duplication and check if there are any plus (+) signal before
- * @param f_item
- * @param s_item
+ * @param f_digit First number
+ * @param s_digit Seconde Number
  * @return int: Diff between a value to another. If equals, will be the same
  */
-static int	ft_number_validation(char *f_item, char *s_item)
+static int	ft_number_validation(char *f_digit, char *s_digit)
 {
 	int	i;
 	int	j;
@@ -112,16 +111,13 @@ static int	ft_number_validation(char *f_item, char *s_item)
 	i = 0;
 	j = i;
 	// (+12) must be equal to (12)
-	if (f_item[i] == '+')
-	{
+	if (f_digit[i] == '+')
 		i++;
-	}
-	if(s_item[j] == '+')
-	{
+	if(s_digit[j] == '+')
 		j++;
-	}
-	while (f_item[i] != '\0' && s_item[j] != '\0'
-		&& f_item[i] == s_item[j])
+	// TODO: Rever este while
+	while (f_digit[i] != '\0' && s_digit[j] != '\0'
+		&& f_digit[i] == s_digit[j])
 	{
 		// If same, go to the next digit
 		i++;
@@ -129,6 +125,6 @@ static int	ft_number_validation(char *f_item, char *s_item)
 	}
 
 	// Returning by ASCII diff
-	result = (unsigned char)f_item[i] - (unsigned char)s_item[j];
+	result = (unsigned char)f_digit[i] - (unsigned char)s_digit[j];
 	return (result);
 }
