@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:39:43 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 14:55:40 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
- # include <stdio.h> // Printf - Remover
+# include <stdio.h> // Printf - Remover
 # include <stdlib.h> // malloc
+# include <limits.h> // Int Max / min
 
 //TODO: Rever a diferença do Index pra posição
 // Linked List
@@ -312,6 +313,12 @@ void	r_rotate_b(t_stack **stack_b);
  * @param stack_b Auxiliary stack
  */
 void	rr_rotate(t_stack **stack_a, t_stack **stack_b);
+
+/**
+ * @brief Exit program. Invalid integer passed by param
+ * @param stack_a Stack with integers
+ */
+void	invalid_int(t_stack **stack_a);
 
 /**
  * @brief help us to verify how the list is in this moment
