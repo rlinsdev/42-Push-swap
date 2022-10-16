@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:05:51 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:22:38 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ stack_size);
  * @param cost_a
  * @param cost_b
  */
-void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
 
 /**
  * @brief
@@ -172,7 +172,7 @@ void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *
  * @param cost_a
  * @param cost_b
  */
-void	do_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
 
 /**
  * @brief
@@ -180,7 +180,7 @@ void	do_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost
  * @param stack_b
  * @param cost
  */
-void	do_rotate_b(t_stack **stack_b, int *cost);
+void	aux_rotate_b(t_stack **stack_b, int *cost);
 
 /**
  * @brief
@@ -188,7 +188,7 @@ void	do_rotate_b(t_stack **stack_b, int *cost);
  * @param stack_a
  * @param cost
  */
-void	do_rotate_a(t_stack **stack_a, int *cost);
+void	aux_rotate_a(t_stack **stack_a, int *cost);
 
 /**
  * @brief Finds the element in stack B with the cheapest cost to move to

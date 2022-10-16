@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:05:51 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:22:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ static void	shift_stack(t_stack **stack_a)
 		while (lowest_pos < stack_size)
 		{
 			r_rotate_a(stack_a);
-			// do_rra(stack_a);
 			lowest_pos++;
 		}
 	}
@@ -75,7 +74,6 @@ static void	shift_stack(t_stack **stack_a)
 		while (lowest_pos > 0)
 		{
 			rotate_a(stack_a);
-			// do_ra(stack_a);
 			lowest_pos--;
 		}
 	}
