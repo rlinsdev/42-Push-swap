@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:34:26 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:06:45 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-static int	update_target_position(t_stack **stack_a, int stack_b_index, int target_index, int target_pos);
+static int	update_target_position(t_stack **stack_a, int stack_b_index,
+				int target_index, int target_pos);
 
 void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 {
-	// TODO: May I remove this variable and just work with (*stack_b)?
 	t_stack	*tmp_stack_b;
 	int		target_pos;
 
@@ -29,14 +29,16 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	while (tmp_stack_b)
 	{
 		// Will get the target position to B
-		target_pos = update_target_position(stack_a, tmp_stack_b->index, INT_MAX, target_pos);
-
+		target_pos = update_target_position(stack_a, tmp_stack_b->index,
+				INT_MAX, target_pos);
+		// Update Target Position
 		tmp_stack_b->tar_pos = target_pos;
+		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
 	}
 }
 
-/**
+/** [Todo comment]
  * @brief
  *	Picks the best target position in stack A for the given index of
  *	an element in stack B. First checks if the index of the B element can
@@ -71,7 +73,8 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
  * @param target_pos
  * @return int
  */
-static int	update_target_position(t_stack **stack_a, int stack_b_index, int target_index, int target_pos)
+static int	update_target_position(t_stack **stack_a, int stack_b_index,
+				int target_index, int target_pos)
 {
 	t_stack	*tmp;
 
@@ -80,15 +83,12 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index, int targ
 	{
 		if (tmp->index > stack_b_index && tmp->index < target_index)
 		{
-			//TODO: Quando entrará aqui?
+			//TODO: Debug inside
 			target_index = tmp->index;
 			target_pos = tmp->pos;
 		}
 		tmp = tmp->next;
 	}
-	// // TODO: Remove this condition. Will never happen
-	// if (target_index != INT_MAX)
-	// 	return (target_pos);
 	tmp = *stack_a;
 	while (tmp)
 	{
@@ -128,7 +128,6 @@ int	get_lowest_index_position(t_stack **stack)
 
 	tmp = *stack;
 	lowest_index = INT_MAX;
-
 	// With push from B, position is wrong. Fix it.
 	update_position(stack);
 	lowest_pos = tmp->pos;

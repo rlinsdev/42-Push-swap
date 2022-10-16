@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:29:16 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 07:56:14 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:10:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ int	get_stack_size(t_stack	*stack)
 	int	i;
 
 	i = 0;
-	// // TODO: Remove this condition
-	// if (!stack)
-	// 	return (0);
 	while (stack)
 	{
 		stack = stack->next;
@@ -42,7 +39,7 @@ t_stack	*get_stack_tail(t_stack *stack)
 	return (stack);
 }
 
-t_stack *get_last_stack(t_stack *stack)
+t_stack	*get_last_stack(t_stack *stack)
 {
 	while (stack && stack->next)
 		stack = stack->next;

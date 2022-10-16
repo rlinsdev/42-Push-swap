@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:14:39 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 09:23:46 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:51:10 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_stack_linked(t_stack **stack)
 {
-	t_stack *aux;
+	t_stack	*aux;
 
 	while (*stack)
 	{

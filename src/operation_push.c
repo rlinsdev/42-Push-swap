@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 07:33:21 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:59:29 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ stack_size)
 	i = 0;
 	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
-		// TODO: Debugar aqui dentro
+		// TODO: Debug inside
 		if ((*stack_a)->index <= stack_size / 2)
 		{
 			push_b(stack_a, stack_b);
@@ -68,7 +68,7 @@ stack_size)
 		}
 		else
 		{
-			// TODO: Debugar aqui dentro
+			// TODO: Debug inside
 			rotate_a(stack_a);
 			printf("StackA: ");
 			ft_print_list(*stack_a);

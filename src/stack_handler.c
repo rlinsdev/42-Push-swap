@@ -6,23 +6,23 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 16:39:40 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:17:37 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-static t_stack *init_stack(int value);
-static void	link_stack_to_tail(t_stack **stack, t_stack *new);
+static t_stack	*init_stack(int value);
+static void		link_stack_to_tail(t_stack **stack, t_stack *new);
 
-t_stack	*array_to_stack(char** argv, int argc)
+t_stack	*array_to_stack(char **argv, int argc)
 {
 	t_stack	*stack_a;
-	int		value; // Integer number
-	int 	i;
+	int		value;
+	int		i;
 
-	i 		= 1;
-	value 	= 0;
+	i = 1;
+	value = 0;
 	while (i < argc)
 	{
 		value = ft_atoi(argv[i]);
@@ -30,7 +30,6 @@ t_stack	*array_to_stack(char** argv, int argc)
 		// vai dar problema de numero maior q um inteiro
 		// if (nb > INT_MAX || nb < INT_MIN)
 		// 	exit_error(&stack_a, NULL);
-
 		if (i == 1)
 			stack_a = init_stack(value);
 		else
@@ -47,11 +46,10 @@ t_stack	*array_to_stack(char** argv, int argc)
  */
 static void	link_stack_to_tail(t_stack **stack, t_stack *new)
 {
-	t_stack *last_stack;
+	t_stack	*last_stack;
 
 	// Retrieve last stack
 	last_stack = get_last_stack(*stack);
-
 	// Now, this will be the last stack
 	last_stack->next = new;
 }
@@ -61,14 +59,13 @@ static void	link_stack_to_tail(t_stack **stack, t_stack *new)
  * @param value int value
  * @return t_stack* stack initialized
  */
-static t_stack *init_stack(int value)
+static t_stack	*init_stack(int value)
 {
-	t_stack *new_stack;
+	t_stack	*new_stack;
 
 	new_stack = malloc(sizeof * new_stack);
 	if (!new_stack)
 		return (NULL);
-
 	new_stack->value = value;
 	new_stack->index = 0;
 	new_stack->pos = -1;
@@ -76,7 +73,6 @@ static t_stack *init_stack(int value)
 	new_stack->cost_a = -1;
 	new_stack->cost_b = -1;
 	new_stack->next = NULL;
-
 	return (new_stack);
 }
 
@@ -91,7 +87,6 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 		ptr_aux = stack_a;
 		value = INT_MIN;
 		highest_stack = NULL;
-
 		// Loop in all elements. Increment will be next, until null
 		while (ptr_aux)
 		{

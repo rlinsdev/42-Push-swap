@@ -6,13 +6,14 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:11:46 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:22:38 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:00:41 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a,
+						int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
@@ -22,7 +23,8 @@ void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int 
 	}
 }
 
-void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a,
+					int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{

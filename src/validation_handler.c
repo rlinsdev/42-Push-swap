@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:51:34 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:19:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	invalid_input(char **argv, int argc)
 	{
 		if (!ft_is_number(argv[i]))
 			return (1);// Not Number
-	 	i++;
+		i++;
 	}
 	if (ft_is_duplicated(argv, argc))
 		return (2); // Duplicated
-	return(0); // Return OK
+	return (0); // Return OK
 }
 
 /** [Passed]
@@ -106,14 +106,14 @@ static int	ft_number_validation(char *f_digit, char *s_digit)
 {
 	int	i;
 	int	j;
-	int result;
+	int	result;
 
 	i = 0;
 	j = i;
 	// (+12) must be equal to (12)
 	if (f_digit[i] == '+')
 		i++;
-	if(s_digit[j] == '+')
+	if (s_digit[j] == '+')
 		j++;
 	// TODO: Rever este while
 	while (f_digit[i] != '\0' && s_digit[j] != '\0'
@@ -123,7 +123,6 @@ static int	ft_number_validation(char *f_digit, char *s_digit)
 		i++;
 		j++;
 	}
-
 	// Returning by ASCII diff
 	result = (unsigned char)f_digit[i] - (unsigned char)s_digit[j];
 	return (result);

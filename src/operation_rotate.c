@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 10:12:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 09:01:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	rotate_b(t_stack **stack_b)
 	write(1, "rb\n", 3);
 	ft_print_list(*stack_b);
 }
+
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate_stack(stack_a);
