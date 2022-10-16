@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:29:16 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 16:40:19 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 07:56:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	get_stack_size(t_stack	*stack)
 	int	i;
 
 	i = 0;
-	// TODO: Remove this condition
-	if (!stack)
-		return (0);
+	// // TODO: Remove this condition
+	// if (!stack)
+	// 	return (0);
 	while (stack)
 	{
 		stack = stack->next;

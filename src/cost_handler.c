@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/15 15:37:57 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:05:51 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,19 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	while (tmp_b)
 	{
 		tmp_b->cost_b = tmp_b->pos;
-		if (tmp_b->pos > size_b / 2)
+		// TODO: Fazer entrar aqui
+		if (tmp_b->pos > (size_b / 2))
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
+
 		tmp_b->cost_a = tmp_b->tar_pos;
-		if (tmp_b->tar_pos > size_a / 2)
+		if (tmp_b->tar_pos > (size_a / 2))
 			tmp_b->cost_a = (size_a - tmp_b->tar_pos) * -1;
+
 		tmp_b = tmp_b->next;
 	}
 }
 
-void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
+void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 	int		cheapest;

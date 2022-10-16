@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 07:28:26 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:05:51 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int value; // Integer value to sort
 	int	index; // Essential to sort algorithm. Where in the list it must stay
 	int	pos; // Essential to sort algorithm. (Is like the index in array). Will exist just upper 4
-	int tar_pos; // Target position in Stack A
+	int tar_pos; // Target position. Will exist in B
 	int	cost_a; // how many steps to rotate Stack A
 	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
 	struct s_stack *next;
@@ -73,7 +73,7 @@ void	free_stack_linked(t_stack **stack);
 /**
  * @brief Get the stack size
  * @param stack will check through all items
- * @return int
+ * @return int - Stack Size
  */
 int	get_stack_size(t_stack	*stack);
 
@@ -125,8 +125,14 @@ void	simple_sort(t_stack **stack_a);
 void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
 /**
- * @brief Get the cost object
- *
+ * @brief Will update cost_a and cost_b in stack B.
+ * calculates the cost of moving each element of stack B into the correct
+ * position in stack A.
+ * Two costs are calculated:
+ *	cost_b represents the cost of getting the element to the top of the B stack
+ *	cost_a represents the cost of getting to the right position in stack A.
+ * If the element is in the bottom half of the stack, the cost will be negative,
+ * If it is in the top half, the cost is positive.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
@@ -185,12 +191,12 @@ void	do_rotate_b(t_stack **stack_b, int *cost);
 void	do_rotate_a(t_stack **stack_a, int *cost);
 
 /**
- * @brief
- *
+ * @brief Finds the element in stack B with the cheapest cost to move to
+ * stack A and moves it to the correct position in stack A.
  * @param stack_a
  * @param stack_b
  */
-void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
 /**
  * @brief Get the before last element
@@ -215,8 +221,12 @@ t_stack	*get_stack_tail(t_stack *stack);
 int	find_highest_index(t_stack *stack);
 
 /** [Passed]
- * @brief The position wil be used to calculate the cost to move
- *
+ * @brief
+ *	Assigns a target position in stack A to each element of stack A.
+ *	The target position is the spot the element in B needs to
+ *	get to in order to be sorted correctly. This position will
+ *	be used to calculate the cost of moving each element to
+ *	its target position in stack A.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */

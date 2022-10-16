@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 07:17:42 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:05:51 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	{
 		handler_target_position(stack_a, stack_b);
 		get_cost(stack_a, stack_b);
-		do_cheapest_move(stack_a, stack_b);
+		exec_cheapest_move(stack_a, stack_b);
 	}
 	if (!is_stack_sorted (*stack_a))
 		shift_stack(stack_a);
