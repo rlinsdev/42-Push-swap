@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:17:37 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 15:03:04 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ t_stack	*array_to_stack(char **argv, int argc)
 	while (i < argc)
 	{
 		value = ft_atoi(argv[i]);
-		// TODO: Como minha ATOI já vai retornra um inteiro, nao sei se nela ja
-		// vai dar problema de numero maior q um inteiro
-		// if (nb > INT_MAX || nb < INT_MIN)
-		// 	exit_error(&stack_a, NULL);
+		// TODO: Is not working...
+		if (value > INT_MAX || value < INT_MIN)
+			invalid_int(&stack_a);
 		if (i == 1)
 			stack_a = init_stack(value);
 		else
