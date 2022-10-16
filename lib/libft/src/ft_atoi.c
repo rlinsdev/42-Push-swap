@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 23:31:12 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/07 08:47:24 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 15:02:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	nb;
-	int	i;
-	int	mult;
+	long long	nb;
+	int			i;
+	int			mult;
 
 	nb = 0;
 	i = 0;
