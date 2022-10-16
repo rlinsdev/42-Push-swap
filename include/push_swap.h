@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:22:38 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:39:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack *get_last_stack(t_stack *stack);
 void	free_stack_linked(t_stack **stack);
 
 
-/**
+/** [Passed]
  * @brief Get the stack size
  * @param stack will check through all items
  * @return int - Stack Size
@@ -138,8 +138,9 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
  */
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
-/**
- * @brief Get the lowest index position object
+/** [Todo: GetBetter about the name and comment]
+ * @brief Gets the current position of the element with the lowest index
+ *	within a stack.
  *
  * @param stack
  * @return int

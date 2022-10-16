@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:22:46 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 08:40:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		get_cost(stack_a, stack_b);
 		exec_cheapest_move(stack_a, stack_b);
 	}
-	if (!is_stack_sorted (*stack_a))
+	if (!is_stack_sorted(*stack_a))
 		shift_stack(stack_a);
 }
 
@@ -61,7 +61,7 @@ static void	shift_stack(t_stack **stack_a)
 
 	stack_size = get_stack_size(*stack_a);
 	lowest_pos = get_lowest_index_position(stack_a);
-	if (lowest_pos > stack_size / 2)
+	if (lowest_pos > (stack_size / 2))
 	{
 		while (lowest_pos < stack_size)
 		{
@@ -73,6 +73,7 @@ static void	shift_stack(t_stack **stack_a)
 	{
 		while (lowest_pos > 0)
 		{
+			// Just rotate to fix the order
 			rotate_a(stack_a);
 			lowest_pos--;
 		}
