@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:06:45 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 11:25:45 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 		}
 		tmp = tmp->next;
 	}
+	if (target_index != INT_MAX) // TODO: [-9] [5] [10] [14]
+		return (target_pos);
 	tmp = *stack_a;
 	while (tmp)
 	{
