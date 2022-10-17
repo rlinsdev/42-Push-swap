@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 14:55:40 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 20:34:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 # include <stdlib.h> // malloc
 # include <limits.h> // Int Max / min
 
-//TODO: Rever a diferença do Index pra posição
+// Index = Must Stay. Position = Stay right now!
+// Index calculate just 1 time. Position must be updated...
 // Linked List
 typedef struct s_stack
 {
 	int value; // Integer value to sort
 	int	index; // Essential to sort algorithm. Where in the list it must stay
-	int	pos; // Essential to sort algorithm. (Is like the index in array). Will exist just upper 4
-	int tar_pos; // Target position. Will exist in B
+	int	pos; // Essential to sort algorithm. (Is like the index in array). Will exist just upper 4. Itś the position where the number stay right now!
+	int tar_pos; // Target position. Will exist just in B. Maybe this value will be the same target
 	int	cost_a; // how many steps to rotate Stack A
 	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
 	struct s_stack *next;

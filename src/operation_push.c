@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:59:29 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 20:34:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ stack_size)
 	i = 0;
 	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
-		// TODO: Debug inside
+		/** First sort. Or push B. This will happen with the lower number
+		 * Largest number stay in stack A (or try to stay in A)*/
 		if ((*stack_a)->index <= stack_size / 2)
 		{
 			push_b(stack_a, stack_b);
@@ -68,7 +69,7 @@ stack_size)
 		}
 		else
 		{
-			// TODO: Debug inside
+			// Or just rotate to make first sort type
 			rotate_a(stack_a);
 			printf("StackA: ");
 			ft_print_list(*stack_a);
@@ -77,14 +78,14 @@ stack_size)
 		}
 		i++;
 	}
-	// 2 to 6 items in stack
+	// 2 to 6 items in stack. Push the other
 	while ((stack_size - pushed) > 3)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
-		// printf("StackA: ");
-		// ft_print_list(*stack_a);
-		// printf("StackB: ");
-		// ft_print_list(*stack_b);
+		printf("StackA: ");
+		ft_print_list(*stack_a);
+		printf("StackB: ");
+		ft_print_list(*stack_b);
 	}
 }

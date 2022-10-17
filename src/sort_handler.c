@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:10:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 19:20:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ void	simple_sort(t_stack **stack_a)
 
 	high_index = find_highest_index(*stack_a);
 	// 3 is the number when call Simple sort (1, 2, 3)
+	// If the index of the first number is highest, do ra,
 	if ((*stack_a)->index == high_index) //(3,2,1). Highest first
 		rotate_a(stack_a);
+	// Otherwise, if the index of the second number is highest, do rra,
 	else if ((*stack_a)->next->index == high_index) //(1,3,2)
 		r_rotate_a(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)

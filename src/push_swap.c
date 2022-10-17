@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:09:09 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/16 20:45:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,42 @@ void	ft_print_list(t_stack *stack)
 {
 	t_stack	*temp;
 
+	// Value
 	temp = stack;
+	printf("Value: ");
 	while (temp != NULL)
 	{
-		printf("[%d] ", temp->value);
+		printf(" %d 	", temp->value);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// index
+	temp = stack;
+	printf("Index: ");
+	while (temp != NULL)
+	{
+		printf("[%d]	", temp->index);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// position
+	temp = stack;
+	printf("Posit: ");
+	while (temp != NULL)
+	{
+		printf("<%d>	", temp->pos);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// Target Position
+	temp = stack;
+	printf("Tar P: ");
+	while (temp != NULL)
+	{
+		printf("(%d)	", temp->pos);
 		temp = temp->next;
 	}
 	printf("\n");
