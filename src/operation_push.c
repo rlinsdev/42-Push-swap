@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 20:34:31 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:11:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,18 @@ stack_size)
 		{
 			push_b(stack_a, stack_b);
 			pushed++;
-			printf("StackA: ");
+			printf("A:\n");
 			ft_print_list(*stack_a);
-			printf("StackB: ");
+			printf("B:\n");
 			ft_print_list(*stack_b);
 		}
 		else
 		{
 			// Or just rotate to make first sort type
 			rotate_a(stack_a);
-			printf("StackA: ");
+			printf("A:\n");
 			ft_print_list(*stack_a);
-			printf("StackB: ");
+			printf("B:\n");
 			ft_print_list(*stack_b);
 		}
 		i++;
@@ -83,9 +83,9 @@ stack_size)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
-		printf("StackA: ");
+		printf("A:\n");
 		ft_print_list(*stack_a);
-		printf("StackB: ");
+		printf("B:\n");
 		ft_print_list(*stack_b);
 	}
 }
