@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 06:58:33 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 08:12:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	cheapest = INT_MAX;
 	while (tmp)
 	{
+		/* Verify the cost to execute a Push A. The signal and the number will
+		 * be important. But to now how many, the number must be absolute */
 		if (ft_abs_nb(tmp->cost_a) + ft_abs_nb(tmp->cost_b)
 			< ft_abs_nb(cheapest))
 		{
@@ -69,17 +71,14 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	exec_move(stack_a, stack_b, cost_a, cost_b);
 }
 
-/**
+/** [Passed]
  * @brief Chooses which move to do, to get the B stack element to the correct
  * position in stack A.
- * If the costs of moving stack A and B into position match (i.e. both negative
- * of both positive), both will be	rotated or reverse rotated at the same time.
- * They might also be rotated separately, before finally pushing the top B
- * element to the top stack A.
+ * If cost_a and cost_b are the same signal, RRR or RR will be executed.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
- * @param cost_a how many steps to rotate Stack A
- * @param cost_b how many steps to rotate Stack A
+ * @param cost_a how many steps to rotate Stack A. (-): RR. (+): R
+ * @param cost_b how many steps to rotate Stack B. (-): RR. (+): R
  */
 static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 				int cost_b)
@@ -88,11 +87,13 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 	ft_print_list(*stack_a);
 	printf("B:\n");
 	ft_print_list(*stack_b);
-	// TODO: Debug each of this 4 next methods
+	// Both negative? RRR
 	if (cost_a < 0 && cost_b < 0)
 		aux_rev_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
+	// Both positive? RR
 	else if (cost_a > 0 && cost_b > 0)
 		aux_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
+	// Rotate A.
 	aux_rotate_a(stack_a, &cost_a);
 	printf("A:\n");
 	ft_print_list(*stack_a);
@@ -101,13 +102,11 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 	ft_print_list(*stack_b);
 	// Push item of B to A
 	push_a(stack_a, stack_b);
-	// printf("A:\n");
-	// ft_print_list(*stack_a);
 }
 
 /**
- * @brief Absolute number
- * Return the positive number
+ * @brief Absolute number. Return the positive number. Itś necessary to know
+ * how many interactions will be necessary. The signal will be used in future.
  * @param nb Integer number
  * @return int Positive number
  */

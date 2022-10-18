@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 07:42:22 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 08:16:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,47 +155,53 @@ int	get_position_lower_element(t_stack **stack);
 void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
 stack_size);
 
-/**
- * @brief
- *
- * @param stack_a
- * @param stack_b
- * @param cost_a
- * @param cost_b
+/** [Passed]
+ * @brief Will Reverse Rotate Both stacks
+ * Both (cost_a and cost_b) must to be negative. If yes, reverse rotate both
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ * @param cost_a How many reverse rotate must be done
+ * @param cost_b How many reverse rotate must be done
  */
 void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
 
-/**
- * @brief
- *
- * @param stack_a
- * @param stack_b
- * @param cost_a
- * @param cost_b
+/** [Passed]
+ * @brief Will Rotate Both stacks
+ * Both (cost_a and cost_b) must to be positive. If yes, reverse rotate both
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
+ * @param cost_a How many rotate must be done
+ * @param cost_b How many rotate must be done
  */
 void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
 
-/**
- * @brief
- *
- * @param stack_b
- * @param cost
+/** [Passed]
+ * @brief Will Rotate Stack_B.
+ * If Cost is positive, just Rotate.
+ * If Cost is negative. Reverse Rotate
+ * How many times? Integer value of cost
+ * If Cost is 0, nothing to do.
+ * @param stack_b Stack with integers
+ * @param cost Indicate the number of rotations, and direction
  */
 void	aux_rotate_b(t_stack **stack_b, int *cost);
 
-/**
- * @brief
- *
- * @param stack_a
- * @param cost
+/** [Passed]
+ * @brief Will Rotate Stack_A.
+ * If Cost is positive, just Rotate.
+ * If Cost is negative. Reverse Rotate
+ * How many times? Integer value of cost
+ * If Cost is 0, nothing to do
+ * @param stack_a Stack with integers
+ * @param cost Indicate the number of rotations, and direction
  */
 void	aux_rotate_a(t_stack **stack_a, int *cost);
 
-/**
+/** [Passed]
  * @brief Finds the element in stack B with the cheapest cost to move to
  * stack A and moves it to the correct position in stack A.
- * @param stack_a
- * @param stack_b
+ * @param stack_a Stack with integers
+ * @param stack_b Auxiliary stack
  */
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
