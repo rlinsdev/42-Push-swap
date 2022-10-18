@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 08:48:49 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:36:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 		// Go to next
 		tmp_b = tmp_b->next;
 	}
+	printf("B:\n");
+	ft_print_list(*stack_b);
 }
 
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
@@ -80,15 +82,25 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 				int cost_b)
 {
+	printf("A:\n");
+	ft_print_list(*stack_a);
+	printf("B:\n");
+	ft_print_list(*stack_b);
 	// TODO: Debug each of this 4 next methods
 	if (cost_a < 0 && cost_b < 0)
 		aux_rev_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
 	else if (cost_a > 0 && cost_b > 0)
 		aux_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
 	aux_rotate_a(stack_a, &cost_a);
+	printf("A:\n");
+	ft_print_list(*stack_a);
 	aux_rotate_b(stack_b, &cost_b);
+	printf("B:\n");
+	ft_print_list(*stack_b);
 	// Push item of B to A
 	push_a(stack_a, stack_b);
+	// printf("A:\n");
+	// ft_print_list(*stack_a);
 }
 
 /**
