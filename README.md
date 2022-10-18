@@ -24,15 +24,14 @@
 
 
 ```sh
-# Samples of commands
-$> cmd1
-$> cmd2
-
-# Commands by program
-
-
-# Command by terminal
-
+# Will generate a executable in bin folder
+	$> make run
+# Execute valgrind. Will check memory leaks
+	$> make leak
+# will run norminette inside de .c files (src folder)
+	$> make norma
+# Check leaks
+	$> make valgrind
 ```
 
 
@@ -71,17 +70,11 @@ $> cmd2
 
 
 
-## `To Run`
+## `Validations, tips and tricks`
 
 ```sh
-# Will generate a executable in bin folder
-	$> make run
-# Execute valgrind. Will check memory leaks
-	$> make leak
-# will run norminette inside de .c files (src folder)
-	$> make norma
 ########################
-#Don't run this in ZSH
+#Don't run in ZSH
 ########################
 #Allow access to checker (provided by 42)
 	$> chmod 700 checker_linux
@@ -93,10 +86,6 @@ $> cmd2
 	$> ./bin/push_swap 1 5 2147483657 8
 #500 Numbers between 0 and 1000
 	$> (shuf -i 0-1000 -n 500)
-#check leaks
-	$> make valgrind
-#norminette
-	$> make norma
 #Validation-1:
 	$>ARG="2 1 0"; ./bin/push_swap $ARG | ./checker_linux $ARG
 	$>ARG="2 1 0"; ./bin/push_swap $ARG | wc -l
@@ -117,8 +106,6 @@ $> cmd2
 	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | ./checker_linux $ARG
 	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | wc -l
 	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG
-
-
 ```
 
 # Videos
