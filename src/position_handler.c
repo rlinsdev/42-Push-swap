@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/17 21:24:02 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 07:43:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,7 @@ void	update_position(t_stack **stack)
 	}
 }
 
-// TODO: Index or positon. Get Better name.
-int	get_lowest_index_position(t_stack **stack)
+int	get_position_lower_element(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		lowest_index;
@@ -138,6 +137,8 @@ int	get_lowest_index_position(t_stack **stack)
 	lowest_index = INT_MAX;
 	// With push from B, position is wrong. Fix it.
 	update_position(stack);
+	printf("A:\n");
+	ft_print_list(*stack);
 	lowest_pos = tmp->pos;
 	while (tmp)
 	{
