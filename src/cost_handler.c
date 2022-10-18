@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 08:12:31 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 08:58:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 	push_a(stack_a, stack_b);
 }
 
-/**
+/** [Passed]
  * @brief Absolute number. Return the positive number. Itś necessary to know
  * how many interactions will be necessary. The signal will be used in future.
  * @param nb Integer number

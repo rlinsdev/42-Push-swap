@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 08:16:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:09:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_stack	*array_to_stack(char** argv, int argc);
  */
 t_stack *get_last_stack(t_stack *stack);
 
-/**
+/** [Passed]
  * @brief How was used malloc to generate a stack object, we must free this
  * memory allocation in linked list
  * @param stack loop through all linked stacks
@@ -100,18 +100,22 @@ void	init_stack_index(t_stack *stack_a, int stack_size);
  */
 void	update_position(t_stack **stack);
 
-/**
+/** [Passed]
  * @brief Verify if the stack is sorted. Will help us to choose the type of
- * method choose to sort the pile
- * @param stack_a
+ * method choose to sort the pile. Will help when the List is sorted and we
+ * don't need do any action.
+ * Will be called in the end too, to check if stack is sorted correctly
+ * @param stack_a Stack with integers
  * @return (1) if sorted. (0) if mess pile
  */
 int		is_stack_sorted(t_stack *stack_a);
 
 
-/**
- * @brief When stack have just 3 items, this will bhe the best sort method
- * @param stack_a
+/** [Passed]
+ * @brief When stack have just 3 items, this will bhe the best sort method.
+ * Based on the Highest_index, we will work with Rotate (R) or Reverse Rotate
+ * (RR). And Then, Swap (if necessary)
+ * @param stack_a Stack with integers
  */
 void	simple_sort(t_stack **stack_a);
 
@@ -219,11 +223,11 @@ t_stack	*get_stack_before_tail(t_stack *stack);
  */
 t_stack	*get_stack_tail(t_stack *stack);
 
-/**
- * @brief
- *
+/** [Passed]
+ * @brief Return the highest index in stack. This will help us to handler
+ * simple sort approach.
  * @param stack
- * @return int
+ * @return int value of maxIndex
  */
 int	find_highest_index(t_stack *stack);
 
@@ -319,13 +323,13 @@ void	r_rotate_b(t_stack **stack_b);
  */
 void	rr_rotate(t_stack **stack_a, t_stack **stack_b);
 
-/**
+/** [Passed]
  * @brief Exit program. Invalid integer passed by param
  * @param stack_a Stack with integers
  */
 void	invalid_int(t_stack **stack_a);
 
-/**
+/** [Passed]
  * @brief help us to verify how the list is in this moment
  * @param stack_a Stack with integers
  */

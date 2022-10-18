@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:11:46 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 08:17:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 08:21:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	aux_rotate_a(t_stack **stack_a, int *cost)
 	// If exist any cost, rotate A until let in head the correct value
 	while (*cost)
 	{
+		// Positive? Rotate
 		if (*cost > 0)
 		{
 			rotate_a(stack_a);
@@ -64,6 +65,7 @@ void	aux_rotate_b(t_stack **stack_b, int *cost)
 	// If exist any cost, rotate B until let in head the correct value
 	while (*cost)
 	{
+		// Positive? Rotate
 		if (*cost > 0)
 		{
 			rotate_b(stack_b);
