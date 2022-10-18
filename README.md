@@ -75,13 +75,49 @@ $> cmd2
 
 ```sh
 # Will generate a executable in bin folder
-$> make run
-
+	$> make run
 # Execute valgrind. Will check memory leaks
-$> make leak
-
+	$> make leak
 # will run norminette inside de .c files (src folder)
-$> make norma
+	$> make norma
+########################
+#Don't run this in ZSH
+########################
+#Allow access to checker (provided by 42)
+	$> chmod 700 checker_linux
+#Simple execution
+	$> ./bin/push_swap 1 -147 2 89 23 30
+#Print nothing
+	$> ./bin/push_swap 1 5 6 8
+#Print Error
+	$> ./bin/push_swap 1 5 2147483657 8
+#500 Numbers between 0 and 1000
+	$> (shuf -i 0-1000 -n 500)
+#check leaks
+	$> make valgrind
+#norminette
+	$> make norma
+#Validation-1:
+	$>ARG="2 1 0"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$>ARG="2 1 0"; ./bin/push_swap $ARG | wc -l
+	$>ARG="2 1 0"; ./bin/push_swap $ARG
+#Validation-2:
+	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG | wc -l
+	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG
+#Validation-3:
+	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | wc -l
+	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG
+#Validation-4:
+	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | wc -l
+	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG
+#Validation-5:
+	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | wc -l
+	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG
+
 
 ```
 
