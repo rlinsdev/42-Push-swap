@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 09:09:02 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:22:07 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
-# include <stdio.h> // Printf - Remover
+# include <stdio.h> // TODO: Printf - Remover
 # include <stdlib.h> // malloc
 # include <limits.h> // Int Max / min
 
-// Index = Must Stay. Position = Stay right now!
-// Index calculate just 1 time. Position must be updated...
 // Linked List
 typedef struct s_stack
 {
@@ -33,7 +31,7 @@ typedef struct s_stack
 }	t_stack;
 
 
-/**
+/** [Passed]
  * @brief First method in project.
  * @param argc Arguments count
  * @param argv Arguments Vector
@@ -41,7 +39,7 @@ typedef struct s_stack
  */
 int	start(int argc, char **argv);
 
-/**
+/** [Passed]
  * @brief Verify if param is correct. Not allowed duplicate, spaces. Just number
  * @param argv Vector of args
  * @param argc Count of args
@@ -49,7 +47,7 @@ int	start(int argc, char **argv);
  */
 int	invalid_input(char **argv, int argc);
 
-/**
+/** [Passed]
  * @brief Will populate stack_a with values in array
  * @param argv Vector of args
  * @param argc Count of args
@@ -57,8 +55,8 @@ int	invalid_input(char **argv, int argc);
  */
 t_stack	*array_to_stack(char** argv, int argc);
 
-/**
- * @brief Get the last stack object
+/** [Passed]
+ * @brief Get the last stack object. Will be used in rotate and to push a list
  * @param stack Linked list
  * @return t_stack* with next point to null
  */
@@ -71,7 +69,6 @@ t_stack *get_last_stack(t_stack *stack);
  */
 void	free_stack_linked(t_stack **stack);
 
-
 /** [Passed]
  * @brief Get the stack size
  * @param stack will check through all items
@@ -79,23 +76,20 @@ void	free_stack_linked(t_stack **stack);
  */
 int	get_stack_size(t_stack	*stack);
 
-/**
- * @brief Update the index in each value in stack. The index will be compared
- * with the actual value to be order (while inside while).
+/** [Passed]
+ * @brief Initialize a Stack, updating the index in each value in stack.
+ * The index will be compared with the actual value to be order (while inside
+ * while). This method will be called just once, in initialize routine.
  * @param stack_a - All register in linked list
  * @param stack_size - How many times must to be passed
- * @sample: values: [4], [3], [2], [1]
- * 			Index:	[1],  [2], [3], [4]
- */
+  */
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
-/**
- * @brief Update position will simple loop though all elements and put a number * in position. This must be update when the position in pill change. Will
+/** [Passed]
+ * @brief Update position. Will loop though all elements and put a number
+ * in position. This must be update when the position in pill change. Will
  * initialize and update position of stack.
  * Position start in 0
- *		value:		[1]	[3]	[4]
- *		index:		[1]	[0]	[2]
- *		position:	[0]	[1] [2]
  * @param stack
  */
 void	update_position(t_stack **stack);

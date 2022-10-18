@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:01:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:19:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 /**
  * @brief Stack will receive the pointer to the next. The last one will receive
  * the temp variable
- * @param stack
+ * @param stack - by ref. Will rotate the list
  */
 static void	rotate_stack(t_stack **stack)
 {
