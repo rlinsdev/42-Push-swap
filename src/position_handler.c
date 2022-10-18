@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 11:25:45 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:24:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	tmp_stack_b = *stack_b;
 	// Initialize position on stack_A
 	update_position(stack_a);
+	printf("A:\n");
+	ft_print_list(*stack_a);
 	// Initialize position on stack_B
 	update_position(stack_b);
+	printf("B:\n");
+	ft_print_list(*stack_b);
 	target_pos = 0;
 	while (tmp_stack_b)
 	{
@@ -36,6 +40,8 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
 	}
+	printf("B:\n");
+	ft_print_list(*stack_b);
 }
 
 /** [Todo comment]
