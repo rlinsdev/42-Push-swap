@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 11:38:56 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 12:07:30 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	start(int argc, char **argv)
 	{
 		if (invalid_input(argv, argc))
 		{
-			ft_printf("Invalid arguments\n");
+			ft_printf("Error\n");
 			exit (1);
 		}
 		// Initialize Stack_b
