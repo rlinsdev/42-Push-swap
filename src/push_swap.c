@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/17 21:27:12 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:52:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,69 +49,48 @@ int	start(int argc, char **argv)
 	return (0);
 }
 
-void	ft_print_list(t_stack *stack)
+/** [Passed]
+ * @brief Aux to print a list in current state
+ * @param stack Stack to evidence
+ * @param action What variable to print
+ */
+static void ft_print_list_aux(t_stack *stack, char *action)
 {
 	t_stack	*temp;
 
 	// Value
 	temp = stack;
-	printf("Value: ");
+	printf("%s: ", action);
 	while (temp != NULL)
 	{
-		printf(" %d 	", temp->value);
-		temp = temp->next;
-	}
-	printf("\n");
+		if (action == "Value")
+			printf("[%d]	", temp->value);
+		else if (action == "Index")
+			printf("[%d]	", temp->index);
+		else if (action == "Posit")
+			printf("[%d]	", temp->pos);
+		else if (action == "Tar-P")
+			printf("[%d]	", temp->tar_pos);
+		else if (action == "Cos-A")
+			printf("[%d]	", temp->cost_a);
+		else if (action == "Cos-B")
+			printf("[%d]	", temp->cost_b);
 
-	// index
-	temp = stack;
-	printf("Index: ");
-	while (temp != NULL)
-	{
-		printf("[%d]	", temp->index);
 		temp = temp->next;
 	}
 	printf("\n");
+}
 
-	// position
-	temp = stack;
-	printf("Posit: ");
-	while (temp != NULL)
-	{
-		printf("<%d>	", temp->pos);
-		temp = temp->next;
-	}
-	printf("\n");
+void	ft_print_list(t_stack *stack)
+{
+	t_stack	*temp;
 
-	// Target Position
-	temp = stack;
-	printf("Tar P: ");
-	while (temp != NULL)
-	{
-		printf("(%d)	", temp->pos);
-		temp = temp->next;
-	}
-	printf("\n");
-
-	// Cost A
-	temp = stack;
-	printf("Cos A: ");
-	while (temp != NULL)
-	{
-		printf("|%d|	", temp->cost_a);
-		temp = temp->next;
-	}
-	printf("\n");
-
-		// Cost B
-	temp = stack;
-	printf("Cos B: ");
-	while (temp != NULL)
-	{
-		printf("|%d|	", temp->cost_b);
-		temp = temp->next;
-	}
-	printf("\n");
+	ft_print_list_aux(stack, "Value");
+	ft_print_list_aux(stack, "Index");
+	ft_print_list_aux(stack, "Posit");
+	ft_print_list_aux(stack, "Tar-P");
+	ft_print_list_aux(stack, "Cos-A");
+	ft_print_list_aux(stack, "Cos-B");
 }
 
 /** [Passed]

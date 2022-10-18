@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 09:19:26 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:34:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_is_number(char *arg)
 	return (1); // OK
 }
 
-/**
+/** [Passed]
  * @brief Check if exist the same number in param
  * @param items Arr of integers
  * @param count Total of integers
@@ -65,7 +65,7 @@ static int	ft_is_duplicated(char **items, int count)
 	int	i;
 	int	j;
 
-	// Start in 1. Don't need compare first param (program name)
+	// Start in 1. Do not compare first param (program name)
 	i = 1;
 	while (i < count)
 	{

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 09:22:07 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 09:29:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_stack
 	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
 	struct s_stack *next;
 }	t_stack;
-
 
 /** [Passed]
  * @brief First method in project.
@@ -104,7 +103,6 @@ void	update_position(t_stack **stack);
  */
 int		is_stack_sorted(t_stack *stack_a);
 
-
 /** [Passed]
  * @brief When stack have just 3 items, this will bhe the best sort method.
  * Based on the Highest_index, we will work with Rotate (R) or Reverse Rotate
@@ -114,20 +112,19 @@ int		is_stack_sorted(t_stack *stack_a);
 void	simple_sort(t_stack **stack_a);
 
 
-/**
+/** [Passed]
  * @brief Core of program. Responsible to sort more than 3 integers. Send all
  * element to B, but 3. Find current position. Calculate target position. Check
- * the cost of actions. Take action
+ * the cost of actions. Take action.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  * @param stack_size Size of stack
  */
 void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
-/**
+/** TODO: GetBetter brief
  * @brief Will update cost_a and cost_b in stack B.
- * calculates the cost of moving each element of stack B into the correct
- * position in stack A.
+ * Verify how many actions must to do to order a list.
  * Two costs are calculated:
  *	cost_b represents the cost of getting the element to the top of the B stack
  *	cost_a represents the cost of getting to the right position in stack A.
@@ -145,8 +142,9 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b);
  */
 int	get_position_lower_element(t_stack **stack);
 
-/**
- * @brief Send all integers to B, but stay with 3 in stack A.
+/** [Passed]
+ * @brief Send all integers to B, but stay with 3 in stack A. In this moment,
+ * we apply the first sort method
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
@@ -203,14 +201,14 @@ void	aux_rotate_a(t_stack **stack_a, int *cost);
  */
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
-/**
- * @brief Get the before last element
+/** [Passed]
+ * @brief Get the stack before last element
  * @param stack
  * @return t_stack* before the end
  */
 t_stack	*get_stack_before_tail(t_stack *stack);
 
-/**
+/** [Passed]
  * @brief will return the last element
  * @param stack
  * @return t_stack* Pointer to last stack
@@ -226,8 +224,7 @@ t_stack	*get_stack_tail(t_stack *stack);
 int	find_highest_index(t_stack *stack);
 
 /** [Passed]
- * @brief
- *	Assigns a target position in stack A to each element of stack A.
+ * @brief Assigns a target position in stack A to each element of stack A.
  *	The target position is the spot the element in B needs to
  *	get to in order to be sorted correctly. This position will
  *	be used to calculate the cost of moving each element to
