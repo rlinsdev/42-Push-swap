@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 20:45:08 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:27:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	start(int argc, char **argv)
 		// get Stack size
 		stack_size = get_stack_size(stack_a);
 		init_stack_index(stack_a, stack_size);
+		ft_printf("Index added:\n");
+		ft_print_list(stack_a);
 		best_sort_alg(&stack_a, &stack_b, stack_size);
 		// TODO: Remove:
 		ft_printf("Sort list:\n");
@@ -87,6 +89,26 @@ void	ft_print_list(t_stack *stack)
 	while (temp != NULL)
 	{
 		printf("(%d)	", temp->pos);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// Cost A
+	temp = stack;
+	printf("Cos A: ");
+	while (temp != NULL)
+	{
+		printf("|%d|	", temp->cost_a);
+		temp = temp->next;
+	}
+	printf("\n");
+
+		// Cost B
+	temp = stack;
+	printf("Cos B: ");
+	while (temp != NULL)
+	{
+		printf("|%d|	", temp->cost_b);
 		temp = temp->next;
 	}
 	printf("\n");
