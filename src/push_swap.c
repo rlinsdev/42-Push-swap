@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 12:07:30 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 14:40:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,55 +49,56 @@ int	start(int argc, char **argv)
 	return (0);
 }
 
-/** [Passed]
- * @brief Aux to print a list in current state
- * @param stack Stack to evidence
- * @param action What variable to print
- */
-static void ft_print_list_aux(t_stack *stack, char *action)
-{
-	return ;
-	t_stack	*temp;
-
-	// Value
-	temp = stack;
-	printf("%s: ", action);
-	while (temp != NULL)
-	{
-		if (action == "Value")
-			printf("[%d]	", temp->value);
-		else if (action == "Index")
-			printf("[%d]	", temp->index);
-		else if (action == "Posit")
-			printf("[%d]	", temp->pos);
-		else if (action == "Tar-P")
-			printf("[%d]	", temp->tar_pos);
-		else if (action == "Cos-A")
-			printf("[%d]	", temp->cost_a);
-		else if (action == "Cos-B")
-			printf("[%d]	", temp->cost_b);
-
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
 void	ft_print_list(t_stack *stack, char identify)
 {
-	return ;
+	// return ;
+
 	t_stack	*temp;
 
 	if (identify == 'A')
-		printf("A:\n");
+		ft_printf("A:\n");
 	else
-		printf("B:\n");
+		ft_printf("B:\n");
 
-	ft_print_list_aux(stack, "Value");
-	ft_print_list_aux(stack, "Index");
-	ft_print_list_aux(stack, "Posit");
-	ft_print_list_aux(stack, "Tar-P");
-	ft_print_list_aux(stack, "Cos-A");
-	ft_print_list_aux(stack, "Cos-B");
+	// Value
+	temp = stack;
+	printf("Value: ");
+	while (temp != NULL)
+	{
+		printf("[%d]	", temp->value);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// index
+	temp = stack;
+	printf("Index: ");
+	while (temp != NULL)
+	{
+		printf("[%d]	", temp->index);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// position
+	temp = stack;
+	printf("Posit: ");
+	while (temp != NULL)
+	{
+		printf("[%d]	", temp->pos);
+		temp = temp->next;
+	}
+	printf("\n");
+
+	// Target Position
+	temp = stack;
+	printf("Tar P: ");
+	while (temp != NULL)
+	{
+		printf("[%d]	", temp->pos);
+		temp = temp->next;
+	}
+	printf("\n");
 }
 
 /** [Passed]

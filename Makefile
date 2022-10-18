@@ -15,8 +15,8 @@ BINS_PATH 		= ./bin/
 
 # Compilation
 CC 		= gcc -g
-#FLAGS 	= -Wall -Wextra -Werror
-FLAGS 	=
+FLAGS 	= -Wall -Wextra -Werror
+#FLAGS 	=
 
 ARGS = -422 115 655 -379 29 768
 
