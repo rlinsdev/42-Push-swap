@@ -18,6 +18,8 @@ CC 		= gcc -g
 #FLAGS 	= -Wall -Wextra -Werror
 FLAGS 	=
 
+ARGS = -422 115 655 -379 29 768
+
 #Chedk Leak memory
 LEAK = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s
 
@@ -63,9 +65,8 @@ main:	./apps/app.c
 
 # Compile program and execute main file
 run: all main
-	@$(BINS_PATH)$(EXECUTABLE)
+	$(BINS_PATH)$(EXECUTABLE) $(ARGS)
 
-#mcombeau
 test2:				$(NAME)
 					$(eval ARG = $(shell shuf -i 0-100 -n 2))
 					./push_swap $(ARG) | ./checker_linux $(ARG)
@@ -92,7 +93,7 @@ norma:
 	norminette $(SOURCES)
 
 valgrind:
-	$(LEAK) $(BINS_PATH)$(EXECUTABLE)
+	$(LEAK) $(BINS_PATH)$(EXECUTABLE) $(ARGS)
 
 # Removing and running
 re: fclean all
