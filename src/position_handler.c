@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 07:43:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:22:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	tmp_stack_b = *stack_b;
 	// Initialize position on stack_A
 	update_position(stack_a);
-	printf("A:\n");
-	ft_print_list(*stack_a);
+
+	ft_print_list(*stack_a, 'A');
 	// Initialize position on stack_B
 	update_position(stack_b);
-	printf("B:\n");
-	ft_print_list(*stack_b);
+	// printf("B:\n");
+	ft_print_list(*stack_b, 'B');
 	target_pos = 0;
 	while (tmp_stack_b)
 	{
@@ -40,8 +40,8 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
 	}
-	printf("B:\n");
-	ft_print_list(*stack_b);
+	// printf("B:\n");
+	ft_print_list(*stack_b, 'B');
 }
 
 /** [Todo comment]
@@ -137,8 +137,8 @@ int	get_position_lower_element(t_stack **stack)
 	lowest_index = INT_MAX;
 	// With push from B, position is wrong. Fix it.
 	update_position(stack);
-	printf("A:\n");
-	ft_print_list(*stack);
+	// printf("A:\n");
+	ft_print_list(*stack, 'A');
 	lowest_pos = tmp->pos;
 	while (tmp)
 	{

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 09:52:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:26:25 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ int	start(int argc, char **argv)
 		// pass Array to Stack
 		stack_a = array_to_stack(argv, argc);
 		// TODO: Remove:
-		ft_printf("Mess pill list:\n");
-		ft_print_list(stack_a);
+		// ft_printf("Mess pill list:\n");
+		ft_print_list(stack_a, 'A');
 		// get Stack size
 		stack_size = get_stack_size(stack_a);
 		init_stack_index(stack_a, stack_size);
-		ft_printf("Index added:\n");
-		ft_print_list(stack_a);
+		// ft_printf("Index added:\n");
+		ft_print_list(stack_a, 'A');
 		best_sort_alg(&stack_a, &stack_b, stack_size);
 		// TODO: Remove:
-		ft_printf("Sort list:\n");
-		ft_print_list(stack_a);
+		// ft_printf("Sort list:\n");
+		ft_print_list(stack_a, 'A');
 		// Free Stack
 		free_stack_linked(&stack_a);
 	}
@@ -81,9 +81,15 @@ static void ft_print_list_aux(t_stack *stack, char *action)
 	printf("\n");
 }
 
-void	ft_print_list(t_stack *stack)
+void	ft_print_list(t_stack *stack, char identify)
 {
+	return ;
 	t_stack	*temp;
+
+	if (identify == 'A')
+		printf("A:\n");
+	else
+		printf("B:\n");
 
 	ft_print_list_aux(stack, "Value");
 	ft_print_list_aux(stack, "Index");

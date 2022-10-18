@@ -13,20 +13,12 @@
 [OK] "args": [9, 5 ,1, 3, 4],
 [OK] "args": [3, 5 ,1, 9, 4, 50, 80, -99],
 
-Vlr [3, 5 ,1, 9, 4, 50, 80, -99]
-Ind [3, 5, 2, 6, 4,  7,  8,   1]
-INDEX É O VALOR ONDE TEM QUE ESTAR O NÚMERO. JÁ ESTÁ CALCULADO CORRETO LÁ NOS PRIMEIROS MÉTODOS
+"args": [1, 3, 4, 0, 8, 9, 6, 2],
 
 
+-Index: Where the number must stay. This will be update in the begin of program. Through all the list and put the correct index in each number
+-Position: Will be like a index in an array. It's the position of number right now! (correct or not). Exist in A and B. This will be update every time, to get the right position of each element.
+-Target Position: Exist just in B. This will tell us where this number in B must stay in A.
+-cost_A: How many times we must rotate to get a desired result left the stack correctly to push B to A
+cost_B:
 
-/**/
-Value: [5] [4] [3] [2] [1]
-Index: [4] [3] [2] [1] [0]
-/**/
-value:		 3	 0	 9	 1
-index:		[3]	[1]	[4]	[2]
-position:	<0>	<1>	<2>	<3>
-
-Custo = 0 (na primeira vez)
-custo = 1 (na segudna vez)
-lowest_pos = 1 (na primeira vez)

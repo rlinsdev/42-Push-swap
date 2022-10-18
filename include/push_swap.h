@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 09:29:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:25:04 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,7 +323,8 @@ void	invalid_int(t_stack **stack_a);
 /** [Passed]
  * @brief help us to verify how the list is in this moment
  * @param stack_a Stack with integers
+ * @param identify (A) Stack A. (B) Stack B
  */
-void	ft_print_list(t_stack *stack_a);
+void	ft_print_list(t_stack *stack_a, char identify);
 
 #endif

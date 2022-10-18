@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/17 21:11:48 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:23:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	write(1, "pa\n", 3);
-	ft_print_list(*stack_a);
+	ft_print_list(*stack_a, 'A');
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
-	ft_print_list(*stack_a);
+	ft_print_list(*stack_a, 'A');
 }
 
 /** [Passed]
@@ -45,7 +45,7 @@ static void	push(t_stack **stack_orig, t_stack **stack_dest)
 	*stack_dest = *stack_orig;
 	*stack_orig = tmp;
 }
-
+// TODO: Comentário aqui dentro não está legal
 void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
 stack_size)
 {
@@ -62,19 +62,19 @@ stack_size)
 		{
 			push_b(stack_a, stack_b);
 			pushed++;
-			printf("A:\n");
-			ft_print_list(*stack_a);
-			printf("B:\n");
-			ft_print_list(*stack_b);
+			// printf("A:\n");
+			ft_print_list(*stack_a, 'A');
+			// printf("B:\n");
+			ft_print_list(*stack_b, 'B');
 		}
 		else
 		{
 			// Or just rotate to make first sort type
 			rotate_a(stack_a);
-			printf("A:\n");
-			ft_print_list(*stack_a);
-			printf("B:\n");
-			ft_print_list(*stack_b);
+			// printf("A:\n");
+			ft_print_list(*stack_a, 'A');
+			// printf("B:\n");
+			ft_print_list(*stack_b, 'B');
 		}
 		i++;
 	}
@@ -83,9 +83,9 @@ stack_size)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
-		printf("A:\n");
-		ft_print_list(*stack_a);
-		printf("B:\n");
-		ft_print_list(*stack_b);
+		// printf("A:\n");
+		ft_print_list(*stack_a, 'A');
+		// printf("B:\n");
+		ft_print_list(*stack_b, 'B');
 	}
 }

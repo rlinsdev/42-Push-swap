@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 15:03:04 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:04:38 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 		// Loop in all elements. Increment will be next, until null
 		while (ptr_aux)
 		{
-			// TODO: Testar com int_min
-			if (ptr_aux->value == INT_MIN && ptr_aux->index == 0)
-				ptr_aux->index = 1;
+			// // TODO: Testar com int_min
+			// if (ptr_aux->value == INT_MIN && ptr_aux->index == 0)
+			// 	ptr_aux->index = 1;
 			// Update aux var, verifying if index still 0
 			if (ptr_aux->value > value && ptr_aux->index == 0)
 			{
