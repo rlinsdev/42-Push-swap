@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/17 21:36:49 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/18 06:58:33 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	size_b = get_stack_size(tmp_b);
 	while (tmp_b)
 	{
+		// As pattern, cost of B will be a position of B.
 		tmp_b->cost_b = tmp_b->pos;
-		// TODO: Cost B - Debug inside
+		/* Will change this cost, when we check that will be cheapest
+		 * reverse rotate (negative to indicate reverse rotate)*/
 		if (tmp_b->pos > (size_b / 2))
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-		// TODO: Cost A - Debug inside
+		// As pattern, cost of A will be a target position of A.
 		tmp_b->cost_a = tmp_b->tar_pos;
 		if (tmp_b->tar_pos > (size_a / 2))
 			tmp_b->cost_a = (size_a - tmp_b->tar_pos) * -1;
