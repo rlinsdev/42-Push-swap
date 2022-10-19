@@ -114,9 +114,12 @@
 	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG
 ```
 
-# Videos
+# `Videos`
 • Linked List:
+
 https://www.youtube.com/watch?v=7bAPics2a5o&list=PL3ZslI15yo2r-gHJtjORRMRKMSNRpf7u5&index=48
+
+https://www.youtube.com/watch?v=VOpjAHCee7c
 
 • Sort Algorithms
 https://www.youtube.com/watch?v=ZZuD6iUe3Pc
@@ -126,11 +129,25 @@ https://phemsi-a.itch.io/push-swap
 
 
 • Visualization of 24 Sorting Algorithms
+
 https://www.youtube.com/watch?v=BeoCbJPuvSE&t=5s
+
 https://www.youtube.com/watch?v=ZZuD6iUe3Pc
+
 https://www.youtube.com/watch?v=ZYPFQ3kMmdU
 
 
+# `GUI:`
 
 
-# Tests:
+# `Article:`
+• https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/
+
+• https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+
+
+
+# `Tests:`
+• checker_linux:
+
+https://github.com/laisarena/push_swap_tester.git
