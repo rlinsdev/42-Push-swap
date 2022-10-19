@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 10:23:48 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 07:39:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 
 /** [Passed]
  * @brief Push/send the top element of a origin stack to the dest stack
- * @param stack_a Stack with integers
- * @param stack_b Auxiliary stack
+ * @param stack_orig Stack with integers
+ * @param stack_dest Auxiliary stack
  */
 static void	push(t_stack **stack_orig, t_stack **stack_dest)
 {
@@ -62,18 +62,14 @@ stack_size)
 		{
 			push_b(stack_a, stack_b);
 			pushed++;
-			// printf("A:\n");
 			ft_print_list(*stack_a, 'A');
-			// printf("B:\n");
 			ft_print_list(*stack_b, 'B');
 		}
 		else
 		{
 			// Or just rotate to make first sort type
 			rotate_a(stack_a);
-			// printf("A:\n");
 			ft_print_list(*stack_a, 'A');
-			// printf("B:\n");
 			ft_print_list(*stack_b, 'B');
 		}
 		i++;
@@ -83,9 +79,7 @@ stack_size)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
-		// printf("A:\n");
 		ft_print_list(*stack_a, 'A');
-		// printf("B:\n");
 		ft_print_list(*stack_b, 'B');
 	}
 }
