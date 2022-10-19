@@ -17,7 +17,13 @@
 
 # What is Push Swap?
 
-•Lorm spum
+•Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum
+
+<p align="center"><img src="https://miro.medium.com/max/700/1*rXKk8juFHQaLzI-uJyEVog.png" alt="PushSwap1"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*dAHbFo-fEko25X-C8CVeKw.png" alt="Swap"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*Iji-cUJbgJ1BRmLjT9Qqkw.png" alt="Rotation"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*v8rjNThxCvEIkbDNjomCZg.png" alt="R-Rotation"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*kE_2S1E4IoJxRF4eVt6TAQ.png" alt="Push"> </p>
 
 
 ## How to run - Samples
