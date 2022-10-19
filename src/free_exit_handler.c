@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:14:39 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 14:53:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 08:45:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	free_stack_linked(t_stack **stack)
 void	invalid_int(t_stack **stack_a)
 {
 	free_stack_linked(stack_a);
-	ft_printf("Invalid int\n");
+	ft_printf("Error\n");
 	exit (1);
 }

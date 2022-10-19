@@ -4,6 +4,7 @@
 		"push_swap.h": "c",
 		"unordered_map": "c",
 		"algorithm": "c",
-		"new": "c"
+		"new": "c",
+		"stdio.h": "c"
 	}
 }

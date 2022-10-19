@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/17 21:04:38 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 08:51:03 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void		link_stack_to_tail(t_stack **stack, t_stack *new);
 
 t_stack	*array_to_stack(char **argv, int argc)
 {
-	t_stack	*stack_a;
-	int		value;
-	int		i;
+	t_stack		*stack_a;
+	long long	value;
+	int			i;
 
 	i = 1;
 	value = 0;
+	stack_a = NULL;
 	while (i < argc)
 	{
 		value = ft_atoi(argv[i]);
-		// TODO: Is not working...
 		if (value > INT_MAX || value < INT_MIN)
 			invalid_int(&stack_a);
 		if (i == 1)
