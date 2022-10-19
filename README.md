@@ -19,12 +19,6 @@
 
 •Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum Lorm spum
 
-<p align="center"><img src="https://miro.medium.com/max/700/1*rXKk8juFHQaLzI-uJyEVog.png" alt="PushSwap1"> </p>
-<p align="center"><img src="https://miro.medium.com/max/700/1*dAHbFo-fEko25X-C8CVeKw.png" alt="Swap"> </p>
-<p align="center"><img src="https://miro.medium.com/max/700/1*Iji-cUJbgJ1BRmLjT9Qqkw.png" alt="Rotation"> </p>
-<p align="center"><img src="https://miro.medium.com/max/700/1*v8rjNThxCvEIkbDNjomCZg.png" alt="R-Rotation"> </p>
-<p align="center"><img src="https://miro.medium.com/max/700/1*kE_2S1E4IoJxRF4eVt6TAQ.png" alt="Push"> </p>
-
 
 ## How to run - Samples
 
@@ -60,7 +54,7 @@
 
 •  Algorithm that sorts by index and position.
 
-### `Operations`
+### `Operations - Description`
 
 - sa : swap a - Swap the first 2 elements at the top of stack A. Do nothing if there is only one or no elements.
 - sb : swap b - Swap the first 2 elements at the top of stack B. Do nothing if there is only one or no elements.
@@ -74,6 +68,12 @@
 - rrb : reverse rotate b - shift down all elements of stack B by 1. The last element becomes the first one.
 - rrr : rra and rrb at the same time.
 
+### `Operations - Images`
+<p align="center"><img src="https://miro.medium.com/max/700/1*rXKk8juFHQaLzI-uJyEVog.png" alt="PushSwap1"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*dAHbFo-fEko25X-C8CVeKw.png" alt="Swap"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*Iji-cUJbgJ1BRmLjT9Qqkw.png" alt="Rotation"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*v8rjNThxCvEIkbDNjomCZg.png" alt="R-Rotation"> </p>
+<p align="center"><img src="https://miro.medium.com/max/700/1*kE_2S1E4IoJxRF4eVt6TAQ.png" alt="Push"> </p>
 
 
 ## `Validations, tips and tricks`
