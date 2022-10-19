@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:48:14 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 10:49:32 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_print_list(t_stack *stack, char identify)
 	ft_printf("Tar P: ");
 	while (temp != NULL)
 	{
-		ft_printf("[%d]	", temp->pos);
+		ft_printf("[%d]	", temp->tar_pos);
 		temp = temp->next;
 	}
 	ft_printf("\n");
