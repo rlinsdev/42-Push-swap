@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 08:33:14 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:29:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,28 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
-# include <stdio.h> // TODO: Printf - Remover
+// # include <stdio.h> // TODO: Printf - Remover
 # include <stdlib.h> // malloc
 
-// Linked List
+/**
+ * @brief Linked List
+ * Value: Integer value to sort
+ * Index: Essential to sort algorithm. Where in the list it must stay
+ * Pos: Essential to sort algorithm. (Is like the index in array).
+ *  Will exist just upper 4. Its the position where the number stay right now!
+ * Tar_pos: Target position. Will exist just in B. Where the value should be
+ * cost_a: how many steps to rotate Stack A
+ * cost_b: How many steps to rotate Stack B. TODO: Cost just exist in B
+ */
 typedef struct s_stack
 {
-	int value; // Integer value to sort
-	int	index; // Essential to sort algorithm. Where in the list it must stay
-	int	pos; // Essential to sort algorithm. (Is like the index in array). Will exist just upper 4. Itś the position where the number stay right now!
-	int tar_pos; // Target position. Will exist just in B. Maybe this value will be the same target
-	int	cost_a; // how many steps to rotate Stack A
-	int	cost_b; // how many steps to rotate Stack B. TODO: Cost just exist in B????
-	struct s_stack *next;
+	int				value;
+	int				index;
+	int				pos;
+	int				tar_pos;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
 }	t_stack;
 
 /** [Passed]
@@ -35,7 +44,7 @@ typedef struct s_stack
  * @param argv Arguments Vector
  * @return int
  */
-int	start(int argc, char **argv);
+int		start(int argc, char **argv);
 
 /** [Passed]
  * @brief Verify if param is correct. Not allowed duplicate, spaces. Just number
@@ -43,7 +52,7 @@ int	start(int argc, char **argv);
  * @param argc Count of args
  * @return int: Input invalid (1) Input Valid (0)
  */
-int	invalid_input(char **argv, int argc);
+int		invalid_input(char **argv, int argc);
 
 /** [Passed]
  * @brief Will populate stack_a with values in array
@@ -51,14 +60,14 @@ int	invalid_input(char **argv, int argc);
  * @param argc Count of args
  * @return t_stack* filled
  */
-t_stack	*array_to_stack(char** argv, int argc);
+t_stack	*array_to_stack(char **argv, int argc);
 
 /** [Passed]
  * @brief Get the last stack object. Will be used in rotate and to push a list
  * @param stack Linked list
  * @return t_stack* with next point to null
  */
-t_stack *get_last_stack(t_stack *stack);
+t_stack	*get_last_stack(t_stack *stack);
 
 /** [Passed]
  * @brief How was used malloc to generate a stack object, we must free this
@@ -72,7 +81,7 @@ void	free_stack_linked(t_stack **stack);
  * @param stack will check through all items
  * @return int - Stack Size
  */
-int	get_stack_size(t_stack	*stack);
+int		get_stack_size(t_stack	*stack);
 
 /** [Passed]
  * @brief Initialize a Stack, updating the index in each value in stack.
@@ -110,7 +119,6 @@ int		is_stack_sorted(t_stack *stack_a);
  */
 void	simple_sort(t_stack **stack_a);
 
-
 /** [Passed]
  * @brief Core of program. Responsible to sort more than 3 integers. Send all
  * element to B, but 3. Find current position. Calculate target position. Check
@@ -139,7 +147,7 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b);
  * @param stack Stack A
  * @return int - Position value
  */
-int	get_position_lower_element(t_stack **stack);
+int		get_position_lower_element(t_stack **stack);
 
 /** [Passed]
  * @brief Send all integers to B, but stay with 3 in stack A. In this moment,
@@ -147,8 +155,8 @@ int	get_position_lower_element(t_stack **stack);
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
-void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
-stack_size);
+void	push_all_but_three(t_stack **stack_a, t_stack **stack_b,
+			int stack_size);
 
 /** [Passed]
  * @brief Will Reverse Rotate Both stacks
@@ -158,7 +166,8 @@ stack_size);
  * @param cost_a How many reverse rotate must be done
  * @param cost_b How many reverse rotate must be done
  */
-void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b,
+			int *cost_a, int *cost_b);
 
 /** [Passed]
  * @brief Will Rotate Both stacks
@@ -168,7 +177,8 @@ void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int 
  * @param cost_a How many rotate must be done
  * @param cost_b How many rotate must be done
  */
-void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a,
+			int *cost_b);
 
 /** [Passed]
  * @brief Will Rotate Stack_B.
@@ -220,7 +230,7 @@ t_stack	*get_stack_tail(t_stack *stack);
  * @param stack
  * @return int value of maxIndex
  */
-int	find_highest_index(t_stack *stack);
+int		find_highest_index(t_stack *stack);
 
 /** [Passed]
  * @brief Assigns a target position in stack A to each element of stack A.
@@ -256,15 +266,16 @@ void	swap_b(t_stack **stack_b);
 void	swap_swap(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
- * @brief pa (push a): Take the first element at the top of b and put it at the * top of a. Do nothing if b is empty.
+ * @brief pa (push a): Take the first element at the top of b and put it
+ * at the top of a. Do nothing if b is empty.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 
 /** [OK]
- * @brief (push b): Take the first element at the top of a and put it at the
- * top of b. Do nothing if a is empty.
+ * @brief (push b): Take the first element at the top of a and put it at
+ * the top of b. Do nothing if a is empty.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
