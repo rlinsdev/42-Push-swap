@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 18:36:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/16 15:02:31 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:40:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # include <stdarg.h> // All the macros to use variable args (va_list)
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 128
+#  define BUFFER_SIZE 128
+# endif
 
 # define HEX_BASE_LOWER	"0123456789abcdef"
 # define HEX_BASE_UPPER	"0123456789ABCDEF"
@@ -29,7 +30,6 @@
 # define PTR_NULL		"(nil)"
 # define INI_PTR		"0x"
 # define NEG_PTR		"FFFFFFFF"
-# endif
 
 long long	ft_atoi(const char *str);
 void		ft_free(char *ptr);
@@ -44,9 +44,9 @@ int			ft_print_pointer(void *ptr);
 int			ft_print_hexa(unsigned int nbr, char spec);
 void		ft_putchar(char c);
 int			ft_putstr(char *str);
-char 		*ft_itoa_base(unsigned long long nbr, char *base);
+char		*ft_itoa_base(unsigned long long nbr, char *base);
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
 * @brief Allocates (with malloc(3)) and returns a new
@@ -57,7 +57,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 * @return The new string.
 NULL if the allocation fails.
 */
-char	*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 /**
  * @brief Searches the first n bytes of the given string
@@ -69,7 +69,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
  * @return char*. A pointer to the first character of the first occurrence
  * of s2. A pointer to s1 if s2 is empty. NULL if s2 occurs nowhere in s1.
  */
-char	*ft_strnstr(const char *s1, const char *s2, size_t len);
+char		*ft_strnstr(const char *s1, const char *s2, size_t len);
 
 /**
 * @brief Allocates (with malloc(3)) and returns an array *of strings
@@ -80,7 +80,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 * @return The array of new strings resulting from the split.
 * NULL if the allocation fails.
 */
-char	**ft_split(char const *s, char c);
+char		**ft_split(char const *s, char c);
 
 /**
 * @brief Allocates (with malloc(3)) and returns a substring
@@ -91,7 +91,7 @@ char	**ft_split(char const *s, char c);
 * @param len: The maximum length of the substring.
 * @return The substring. NULL if the allocation fails.
 */
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /**
 * @brief Searches for the first occurrence of the character c
@@ -101,7 +101,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 * @return This returns a pointer to the first occurrence of the
 * character c in the string str, or NULL if the character is not found
 */
-char	*ft_strchr(const char *s, int c);
+char		*ft_strchr(const char *s, int c);
 
 /**
 * @brief isascii in c checks the passed value is ascii character or not.
@@ -109,7 +109,7 @@ char	*ft_strchr(const char *s, int c);
 * @return This function returns non-zero value if passed value is ascii character
 * otherwise zero.
 */
-int		ft_isascii(int argument);
+int			ft_isascii(int argument);
 
 /**
  * @brief It will to identify the new line, add a new (if found)
@@ -118,7 +118,7 @@ int		ft_isascii(int argument);
  * @param text to analyze and 'substring' until de break line.
  * @return the line changed / corrected
  */
-char	*fix_line(char	*text);
+char		*fix_line(char	*text);
 
 /**
  * @brief Will retrieve the begin of new sentence. This was the 'dirty' the
@@ -128,7 +128,7 @@ char	*fix_line(char	*text);
  * @param acc - The Accumulator (previews static variable)
  * @return char* - Part of sentence, that will be used, in the next iteration
  */
-char	*get_newtext(char	*acc);
+char		*get_newtext(char	*acc);
 
 /**
 * @brief Compares the first n bytes of memory area str1 and memory area str2
@@ -139,6 +139,6 @@ char	*get_newtext(char	*acc);
 *if Return value > 0 then it indicates str2 is less than str1.
 *if Return value = 0 then it indicates str1 is equal to str2.
 */
-int		ft_memcmp(const void *str1, const void *str2, size_t len);
+int			ft_memcmp(const void *str1, const void *str2, size_t len);
 
 #endif
