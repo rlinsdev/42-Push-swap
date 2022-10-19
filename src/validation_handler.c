@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 09:34:46 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:45:51 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ static int	ft_number_validation(char *f_digit, char *s_digit)
 		i++;
 	if (s_digit[j] == '+')
 		j++;
-	// TODO: Rever este while
+	// If is not null, compare booth
 	while (f_digit[i] != '\0' && s_digit[j] != '\0'
 		&& f_digit[i] == s_digit[j])
 	{

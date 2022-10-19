@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 07:39:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 10:19:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	push(t_stack **stack_orig, t_stack **stack_dest)
 	*stack_dest = *stack_orig;
 	*stack_orig = tmp;
 }
-// TODO: Comentário aqui dentro não está legal
+
 void	push_all_but_three(t_stack **stack_a, t_stack **stack_b, int
 stack_size)
 {
@@ -56,8 +56,9 @@ stack_size)
 	i = 0;
 	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
-		/** First sort. Or push B. This will happen with the lower number
-		 * Largest number stay in stack A (or try to stay in A)*/
+		/** First sort applied. Try to let the Largest Number in Stack A.
+		 * If current index is lower than size/2, push to B. Otherwise,
+		 * rotate A to find a better match. */
 		if ((*stack_a)->index <= stack_size / 2)
 		{
 			push_b(stack_a, stack_b);
@@ -67,14 +68,13 @@ stack_size)
 		}
 		else
 		{
-			// Or just rotate to make first sort type
 			rotate_a(stack_a);
 			ft_print_list(*stack_a, 'A');
 			ft_print_list(*stack_b, 'B');
 		}
 		i++;
 	}
-	// 2 to 6 items in stack. Push the other
+	// 4 to 6 items in stack, just push to B
 	while ((stack_size - pushed) > 3)
 	{
 		push_b(stack_a, stack_b);

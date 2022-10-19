@@ -9,7 +9,8 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/bin/push_swap", //path to your programs exe and exe name
-			"args": [5, 4, 20, -200],
+			// "args": [5, 4, 20, -200],
+			"args": [7 6 5 4 3 2 1],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],

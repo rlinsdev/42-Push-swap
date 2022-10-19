@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 08:51:03 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:59:30 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack	*array_to_stack(char **argv, int argc)
 
 	i = 1;
 	value = 0;
+	// Init Stack_a. Avoid error IntMax first position.
 	stack_a = NULL;
 	while (i < argc)
 	{
@@ -89,9 +90,6 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 		// Loop in all elements. Increment will be next, until null
 		while (ptr_aux)
 		{
-			// // TODO: Testar com int_min
-			// if (ptr_aux->value == INT_MIN && ptr_aux->index == 0)
-			// 	ptr_aux->index = 1;
 			// Update aux var, verifying if index still 0
 			if (ptr_aux->value > value && ptr_aux->index == 0)
 			{

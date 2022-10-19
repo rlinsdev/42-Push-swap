@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:29:17 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 10:19:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ int		get_position_lower_element(t_stack **stack);
 
 /** [Passed]
  * @brief Send all integers to B, but stay with 3 in stack A. In this moment,
- * we apply the first sort method
+ * we apply the first sort method. Lets largest number in A
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */

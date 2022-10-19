@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:19:01 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:48:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	start(int argc, char **argv)
 		}
 		// Initialize Stack_b
 		stack_b = NULL;
-		// stack_a = NULL;
 		// pass Array to Stack
 		stack_a = array_to_stack(argv, argc);
 		ft_print_list(stack_a, 'A');
