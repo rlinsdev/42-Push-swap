@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 06:48:29 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 07:56:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	start(int argc, char **argv)
 
 void	ft_print_list(t_stack *stack, char identify)
 {
-	// return ;
+	return ;
 
 	t_stack	*temp;
 

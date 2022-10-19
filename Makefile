@@ -16,7 +16,6 @@ BINS_PATH 		= ./bin/
 # Compilation
 CC 		= gcc -g
 FLAGS 	= -Wall -Wextra -Werror
-#FLAGS 	=
 
 ARGS = -422 115 655 -379 29 768
 
@@ -66,13 +65,6 @@ main:	./apps/app.c
 # Compile program and execute main file
 run: all main
 	$(BINS_PATH)$(EXECUTABLE) $(ARGS)
-
-test2:				$(NAME)
-					$(eval ARG = $(shell shuf -i 0-100 -n 2))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
 
 # Sanitize
 clean:
