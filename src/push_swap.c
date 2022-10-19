@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 14:40:52 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 06:48:29 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	start(int argc, char **argv)
 		stack_b = NULL;
 		// pass Array to Stack
 		stack_a = array_to_stack(argv, argc);
-		// TODO: Remove:
-		// ft_printf("Mess pill list:\n");
 		ft_print_list(stack_a, 'A');
 		// get Stack size
 		stack_size = get_stack_size(stack_a);
@@ -40,8 +38,6 @@ int	start(int argc, char **argv)
 		// ft_printf("Index added:\n");
 		ft_print_list(stack_a, 'A');
 		best_sort_alg(&stack_a, &stack_b, stack_size);
-		// TODO: Remove:
-		// ft_printf("Sort list:\n");
 		ft_print_list(stack_a, 'A');
 		// Free Stack
 		free_stack_linked(&stack_a);
