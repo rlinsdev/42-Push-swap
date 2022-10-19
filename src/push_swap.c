@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 08:51:04 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:19:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	start(int argc, char **argv)
 
 void	ft_print_list(t_stack *stack, char identify)
 {
-	// return ;
+	//return ;
 
 	t_stack	*temp;
 
@@ -59,43 +59,63 @@ void	ft_print_list(t_stack *stack, char identify)
 
 	// Value
 	temp = stack;
-	printf("Value: ");
+	ft_printf("Value: ");
 	while (temp != NULL)
 	{
-		printf("[%d]	", temp->value);
+		ft_printf("[%d]	", temp->value);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 
 	// index
 	temp = stack;
-	printf("Index: ");
+	ft_printf("Index: ");
 	while (temp != NULL)
 	{
-		printf("[%d]	", temp->index);
+		ft_printf("[%d]	", temp->index);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 
 	// position
 	temp = stack;
-	printf("Posit: ");
+	ft_printf("Posit: ");
 	while (temp != NULL)
 	{
-		printf("[%d]	", temp->pos);
+		ft_printf("[%d]	", temp->pos);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 
 	// Target Position
 	temp = stack;
-	printf("Tar P: ");
+	ft_printf("Tar P: ");
 	while (temp != NULL)
 	{
-		printf("[%d]	", temp->pos);
+		ft_printf("[%d]	", temp->pos);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
+
+	//Cost A
+	temp = stack;
+	ft_printf("Cos A: ");
+	while (temp != NULL)
+	{
+		ft_printf("[%d]	", temp->cost_a);
+		temp = temp->next;
+	}
+	ft_printf("\n");
+
+	// Cost B
+	temp = stack;
+	ft_printf("Cos B: ");
+	while (temp != NULL)
+	{
+		ft_printf("[%d]	", temp->cost_b);
+		temp = temp->next;
+	}
+	ft_printf("\n");
 }
 
 /** [Passed]

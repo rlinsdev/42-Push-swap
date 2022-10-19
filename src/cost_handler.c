@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 10:20:00 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:22:13 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 		// Go to next
 		tmp_b = tmp_b->next;
 	}
-	// printf("B:\n");
 	ft_print_list(*stack_b, 'B');
 }
 

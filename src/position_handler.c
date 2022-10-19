@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/18 10:22:49 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 09:07:40 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	tmp_stack_b = *stack_b;
 	// Initialize position on stack_A
 	update_position(stack_a);
-
 	ft_print_list(*stack_a, 'A');
 	// Initialize position on stack_B
 	update_position(stack_b);
-	// printf("B:\n");
 	ft_print_list(*stack_b, 'B');
 	target_pos = 0;
 	while (tmp_stack_b)
@@ -40,7 +38,6 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
 	}
-	// printf("B:\n");
 	ft_print_list(*stack_b, 'B');
 }
 
@@ -95,7 +92,8 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 		}
 		tmp = tmp->next;
 	}
-	if (target_index != INT_MAX) // TODO: [-9] [5] [10] [14]
+	// Means that have change. Just return the Target Position
+	if (target_index != INT_MAX)
 		return (target_pos);
 	tmp = *stack_a;
 	while (tmp)
