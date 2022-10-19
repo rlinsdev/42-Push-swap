@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:07:40 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 11:38:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,31 +79,33 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 static int	update_target_position(t_stack **stack_a, int stack_b_index,
 				int target_index, int target_pos)
 {
-	t_stack	*tmp;
+	t_stack	*tmp_a;
 
-	tmp = *stack_a;
-	while (tmp)
+	tmp_a = *stack_a;
+	while (tmp_a)
 	{
-		if (tmp->index > stack_b_index && tmp->index < target_index)
+		// Just get inside when index of A will be smaller than index o B
+		if (tmp_a->index > stack_b_index && tmp_a->index < target_index)
 		{
 			//TODO: Debug inside
-			target_index = tmp->index;
-			target_pos = tmp->pos;
+			target_index = tmp_a->index;
+			target_pos = tmp_a->pos;
 		}
-		tmp = tmp->next;
+		tmp_a = tmp_a->next;
 	}
-	// Means that have change. Just return the Target Position
+	// if Diff, means that have change. Just return the Target Position
 	if (target_index != INT_MAX)
 		return (target_pos);
-	tmp = *stack_a;
-	while (tmp)
+	tmp_a = *stack_a;
+	// Loop through A again
+	while (tmp_a)
 	{
-		if (tmp->index < target_index)
+		if (tmp_a->index < target_index)
 		{
-			target_index = tmp->index;
-			target_pos = tmp->pos;
+			target_index = tmp_a->index;
+			target_pos = tmp_a->pos;
 		}
-		tmp = tmp->next;
+		tmp_a = tmp_a->next;
 	}
 	return (target_pos);
 }
@@ -135,7 +137,6 @@ int	get_position_lower_element(t_stack **stack)
 	lowest_index = INT_MAX;
 	// With push from B, position is wrong. Fix it.
 	update_position(stack);
-	// printf("A:\n");
 	ft_print_list(*stack, 'A');
 	lowest_pos = tmp->pos;
 	while (tmp)

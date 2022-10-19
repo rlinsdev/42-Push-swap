@@ -115,10 +115,20 @@
 ```
 
 # Videos
-• Linked List - https://www.youtube.com/watch?v=7bAPics2a5o&list=PL3ZslI15yo2r-gHJtjORRMRKMSNRpf7u5&index=48
+• Linked List:
+https://www.youtube.com/watch?v=7bAPics2a5o&list=PL3ZslI15yo2r-gHJtjORRMRKMSNRpf7u5&index=48
 
 • Sort Algorithms
 https://www.youtube.com/watch?v=ZZuD6iUe3Pc
+
+• Game
+https://phemsi-a.itch.io/push-swap
+
+
+• Visualization of 24 Sorting Algorithms
+https://www.youtube.com/watch?v=BeoCbJPuvSE&t=5s
+https://www.youtube.com/watch?v=ZZuD6iUe3Pc
+https://www.youtube.com/watch?v=ZYPFQ3kMmdU
 
 
 

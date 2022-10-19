@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:22:13 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/19 11:03:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	while (tmp)
 	{
 		/* Verify the cost to execute a Push A. The signal and the number will
-		 * be important. But to now how many, the number must be absolute */
+		 * be important. But to now known many, the number must be absolute */
 		if (ft_abs_nb(tmp->cost_a) + ft_abs_nb(tmp->cost_b)
 			< ft_abs_nb(cheapest))
 		{
