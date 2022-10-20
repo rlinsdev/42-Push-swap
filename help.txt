@@ -21,6 +21,6 @@ MinInt: -2147483647
 -Index: Where the number must stay. This will be update in the begin of program. Through all the list and put the correct index in each number
 -Position: Will be like a index in an array. It's the position of number right now! (correct or not). Exist in A and B. This will be update every time, to get the right position of each element.
 -Target Position: Exist just in B. This will tell us where this number in B must stay in A.
--cost_A: How many times we must rotate to get a desired result left the stack correctly to push B to A
-cost_B: TODO
+-cost_A: Cost of A will be a target position of A. (-): RR. (+): R
+-cost_B: Cost of B will be a position of B. (-): RR. (+): R
 

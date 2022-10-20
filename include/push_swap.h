@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 08:03:19 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:15:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
  *  Will exist just upper 4. Its the position where the number stay right now!
  * Tar_pos: Target position. Will exist just in B. Where the value should be.
  *  Some times, it may be the same value
- * cost_a: how many steps to rotate Stack A
- * cost_b: How many steps to rotate Stack B. TODO: Cost just exist in B
+ * cost_a: how many steps to rotate Stack A. Cost just exist in B
+ * cost_b: How many steps to rotate Stack B. Cost just exist in B
  */
 typedef struct s_stack
 {
