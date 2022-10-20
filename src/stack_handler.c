@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:48:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*array_to_stack(char **argv, int argc)
 
 	i = 1;
 	value = 0;
-	// Init Stack_a. Avoid error IntMax first position.
 	stack_a = NULL;
 	while (i < argc)
 	{
@@ -48,9 +47,7 @@ static void	link_stack_to_tail(t_stack **stack, t_stack *new)
 {
 	t_stack	*last_stack;
 
-	// Retrieve last stack
 	last_stack = get_last_stack(*stack);
-	// Now, this will be the last stack
 	last_stack->next = new;
 }
 
@@ -87,13 +84,10 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 		ptr_aux = stack_a;
 		value = INT_MIN;
 		highest_stack = NULL;
-		// Loop in all elements. Increment will be next, until null
 		while (ptr_aux)
 		{
-			// Update aux var, verifying if index still 0
 			if (ptr_aux->value > value && ptr_aux->index == 0)
 			{
-				// Update aux variable with the lowest value founded
 				value = ptr_aux->value;
 				highest_stack = ptr_aux;
 				ptr_aux = stack_a;
@@ -103,7 +97,6 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 				ptr_aux = ptr_aux->next;
 			}
 		}
-		// Update the highest value to correct index
 		if (highest_stack != NULL)
 			highest_stack->index = stack_size;
 		stack_size--;

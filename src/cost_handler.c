@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:43:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:46:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,12 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	size_b = get_stack_size(tmp_b);
 	while (tmp_b)
 	{
-		/* Pattern: Cost of B will be a position of B.
-		 * Cost B -> Will be always the position B to be send to A. If the
-		 * position is in middle to tail, negative it(reverse rotate
-		 * is cheapest).*/
 		tmp_b->cost_b = tmp_b->pos;
 		if (tmp_b->pos > (size_b / 2))
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-		/* Pattern: Cost of A will be a target position of A
-		 * Cost A -> Will be always the Target Position. If the position
-		 * is in middle to tail, negative it (Reverse rotate is cheapest) */
 		tmp_b->cost_a = tmp_b->tar_pos;
 		if (tmp_b->tar_pos > (size_a / 2))
 			tmp_b->cost_a = (size_a - tmp_b->tar_pos) * -1;
-		// Go to next
 		tmp_b = tmp_b->next;
 	}
 }
@@ -58,8 +50,6 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	cheapest = INT_MAX;
 	while (tmp_b)
 	{
-		/* Verify the cost to execute a Push A. The signal and the number will
-		 * be important. But to know how many, the number must be absolute */
 		if (ft_abs_nb(tmp_b->cost_a) + ft_abs_nb(tmp_b->cost_b)
 			< ft_abs_nb(cheapest))
 		{
@@ -84,16 +74,12 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 				int cost_b)
 {
-	// Both negative? RRR
 	if (cost_a < 0 && cost_b < 0)
 		aux_rev_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
-	// Both positive? RR
 	else if (cost_a > 0 && cost_b > 0)
 		aux_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
-	// Rotate A.
 	aux_rotate_a(stack_a, &cost_a);
 	aux_rotate_b(stack_b, &cost_b);
-	// Push item of B to A
 	push_a(stack_a, stack_b);
 }
 

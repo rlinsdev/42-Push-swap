@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:44:16 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:47:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 	tmp_a = *stack_a;
 	while (tmp_a)
 	{
-		// Just get inside when index of A is bigger than Index B
 		if (tmp_a->index > stack_b_index && tmp_a->index < target_index)
 		{
 			target_index = tmp_a->index;
@@ -70,15 +69,11 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 		}
 		tmp_a = tmp_a->next;
 	}
-	// if Diff, means that have change. Just return the Target Position
 	if (target_index != INT_MAX)
 		return (target_pos);
 	tmp_a = *stack_a;
-	// Loop through A again
 	while (tmp_a)
 	{
-		/* Compare the target index (First time will be MaxInt and put target
-		* pos to 0 [first in pile]) */
 		if (tmp_a->index < target_index)
 		{
 			target_index = tmp_a->index;
@@ -98,9 +93,7 @@ void	update_position(t_stack **stack)
 	i = 0;
 	while (stack_tmp)
 	{
-		// Set a new position
 		stack_tmp->pos = i;
-		// Update the Stack to the next
 		stack_tmp = stack_tmp->next;
 		i++;
 	}
@@ -114,7 +107,6 @@ int	get_position_lower_element(t_stack **stack)
 
 	tmp = *stack;
 	lowest_index = INT_MAX;
-	// With push from B, position is wrong. Fix it.
 	update_position(stack);
 	lowest_pos = tmp->pos;
 	while (tmp)

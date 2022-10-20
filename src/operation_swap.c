@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:48:07 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:44:12 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:47:39 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ static void	swap(t_stack *stack)
 
 	if (stack == NULL || stack->next == NULL)
 		return ;
-	// Update Value
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
-	// Update Index
 	tmp = stack->index;
 	stack->index = stack->next->index;
 	stack->next->index = tmp;

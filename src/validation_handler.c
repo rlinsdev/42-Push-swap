@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:49:27 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int	invalid_input(char **argv, int argc)
 	while (i < argc)
 	{
 		if (!ft_is_number(argv[i]))
-			return (1);// Not Number
+			return (1);
 		i++;
 	}
 	if (ft_is_duplicated(argv, argc))
-		return (2); // Duplicated
-	return (0); // Return OK
+		return (2);
+	return (0);
 }
 
 /**
@@ -43,16 +43,13 @@ static int	ft_is_number(char *arg)
 	int	i;
 
 	i = 0;
-	// Signal before number, just jump next value
 	if ((arg[i] == '-' || arg[i] == '+') && arg[i + 1] != '\0')
 		i++;
-	// Verify char by char in param passed
 	while (arg[i] && ft_is_valid_char_number(arg[i]))
 		i++;
-	// Next value must to be null (byte null)
 	if (arg[i] != '\0')
-		return (0); // Invalid
-	return (1); // OK
+		return (0);
+	return (1);
 }
 
 /**
@@ -65,17 +62,14 @@ static int	ft_is_duplicated(char **items, int count)
 	int	i;
 	int	j;
 
-	// Start in 1. Do not compare first param (program name)
 	i = 1;
 	while (i < count)
 	{
 		j = i + 1;
 		while (j < count)
 		{
-			// Verify if exist the same number
 			if (ft_number_validation(items[i], items[j]) == 0)
 			{
-				// Identical numbers
 				return (1);
 			}
 			j++;
@@ -92,7 +86,6 @@ static int	ft_is_duplicated(char **items, int count)
  */
 static int	ft_is_valid_char_number(char nbr)
 {
-	// Char between 0 and 9
 	return (nbr >= '0' && nbr <= '9');
 }
 
@@ -110,20 +103,16 @@ static int	ft_number_validation(char *f_digit, char *s_digit)
 
 	i = 0;
 	j = i;
-	// (+12) must be equal to (12)
 	if (f_digit[i] == '+')
 		i++;
 	if (s_digit[j] == '+')
 		j++;
-	// If is not null, compare booth
 	while (f_digit[i] != '\0' && s_digit[j] != '\0'
 		&& f_digit[i] == s_digit[j])
 	{
-		// If same, go to the next digit
 		i++;
 		j++;
 	}
-	// Returning by ASCII diff
 	result = (unsigned char)f_digit[i] - (unsigned char)s_digit[j];
 	return (result);
 }

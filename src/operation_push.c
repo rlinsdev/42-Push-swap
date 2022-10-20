@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:43:23 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:47:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	push(t_stack **stack_orig, t_stack **stack_dest)
 {
 	t_stack	*tmp;
 
-	// Do Nothing if dest is null.
 	if (*stack_orig == NULL)
 		return ;
 	tmp = (*stack_orig)->next;
@@ -54,9 +53,6 @@ stack_size)
 	i = 0;
 	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
-		/** First sort applied. Try to let the Largest Number in Stack A.
-		 * If current index is lower than size/2, push to B. Otherwise,
-		 * rotate A to find a better match. */
 		if ((*stack_a)->index <= stack_size / 2)
 		{
 			push_b(stack_a, stack_b);
@@ -68,7 +64,6 @@ stack_size)
 		}
 		i++;
 	}
-	// 4 to 6 items in stack, just push to B
 	while ((stack_size - pushed) > 3)
 	{
 		push_b(stack_a, stack_b);
