@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:15:01 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/** [Passed]
+/**
  * @brief First method in project.
  * @param argc Arguments count
  * @param argv Arguments Vector
@@ -46,7 +46,7 @@ typedef struct s_stack
  */
 int		start(int argc, char **argv);
 
-/** [Passed]
+/**
  * @brief Verify if param is correct. Not allowed duplicate, spaces. Just number
  * @param argv Vector of args
  * @param argc Count of args
@@ -54,7 +54,7 @@ int		start(int argc, char **argv);
  */
 int		invalid_input(char **argv, int argc);
 
-/** [Passed]
+/**
  * @brief Will populate stack_a with values in array
  * @param argv Vector of args
  * @param argc Count of args
@@ -62,28 +62,28 @@ int		invalid_input(char **argv, int argc);
  */
 t_stack	*array_to_stack(char **argv, int argc);
 
-/** [Passed]
+/**
  * @brief Get the last stack object. Will be used in rotate and to push a list
  * @param stack Linked list
  * @return t_stack* with next point to null
  */
 t_stack	*get_last_stack(t_stack *stack);
 
-/** [Passed]
+/**
  * @brief How was used malloc to generate a stack object, we must free this
  * memory allocation in linked list
  * @param stack loop through all linked stacks
  */
 void	free_stack_linked(t_stack **stack);
 
-/** [Passed]
+/**
  * @brief Get the stack size
  * @param stack will check through all items
  * @return int - Stack Size
  */
 int		get_stack_size(t_stack	*stack);
 
-/** [Passed]
+/**
  * @brief Initialize a Stack, updating the index in each value in stack.
  * The index will be compared with the actual value to be order (while inside
  * while). This method will be called just once, in initialize routine.
@@ -92,7 +92,7 @@ int		get_stack_size(t_stack	*stack);
   */
 void	init_stack_index(t_stack *stack_a, int stack_size);
 
-/** [Passed]
+/**
  * @brief Update position. Will loop though all elements and put a number
  * in position. This must be update when the position in pill change. Will
  * initialize and update position of stack.
@@ -101,7 +101,7 @@ void	init_stack_index(t_stack *stack_a, int stack_size);
  */
 void	update_position(t_stack **stack);
 
-/** [Passed]
+/**
  * @brief Verify if the stack is sorted. Will help us to choose the type of
  * method choose to sort the pile. Will help when the List is sorted and we
  * don't need do any action.
@@ -111,7 +111,7 @@ void	update_position(t_stack **stack);
  */
 int		is_stack_sorted(t_stack *stack_a);
 
-/** [Passed]
+/**
  * @brief When stack have just 3 items, this will bhe the best sort method.
  * Based on the Highest_index, we will work with Rotate (R) or Reverse Rotate
  * (RR). And Then, Swap (if necessary)
@@ -119,7 +119,7 @@ int		is_stack_sorted(t_stack *stack_a);
  */
 void	simple_sort(t_stack **stack_a);
 
-/** [Passed]
+/**
  * @brief Core of program. Responsible to sort more than 3 integers. Send all
  * element to B, but 3. Find current position. Calculate target position. Check
  * the cost of actions. Take action. Try to let the Highest Number in Stack A.
@@ -146,14 +146,14 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
  */
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
-/** [passed]
+/**
  * @brief Gets the current position of the lower number in Stack.
  * @param stack Stack A
  * @return int - Position value
  */
 int		get_position_lower_element(t_stack **stack);
 
-/** [Passed]
+/**
  * @brief Send all integers to B, but stay with 3 in stack A. In this moment,
  * we apply the first sort method. Lets largest number in A
  * @param stack_a Stack with integers
@@ -162,7 +162,7 @@ int		get_position_lower_element(t_stack **stack);
 void	push_all_but_three(t_stack **stack_a, t_stack **stack_b,
 			int stack_size);
 
-/** [Passed]
+/**
  * @brief Will Reverse Rotate Both stacks
  * Both (cost_a and cost_b) must to be negative. If yes, reverse rotate both
  * @param stack_a Stack with integers
@@ -173,7 +173,7 @@ void	push_all_but_three(t_stack **stack_a, t_stack **stack_b,
 void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b,
 			int *cost_a, int *cost_b);
 
-/** [Passed]
+/**
  * @brief Will Rotate Both stacks
  * Both (cost_a and cost_b) must to be positive. If yes, reverse rotate both
  * @param stack_a Stack with integers
@@ -184,7 +184,7 @@ void	aux_rev_rotate_both(t_stack **stack_a, t_stack **stack_b,
 void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a,
 			int *cost_b);
 
-/** [Passed]
+/**
  * @brief Will Rotate Stack_B.
  * If Cost is positive, just Rotate.
  * If Cost is negative. Reverse Rotate
@@ -195,7 +195,7 @@ void	aux_rotate_both(t_stack **stack_a, t_stack **stack_b, int *cost_a,
  */
 void	aux_rotate_b(t_stack **stack_b, int *cost);
 
-/** [Passed]
+/**
  * @brief Will Rotate Stack_A.
  * If Cost is positive, just Rotate.
  * If Cost is negative. Reverse Rotate
@@ -206,7 +206,7 @@ void	aux_rotate_b(t_stack **stack_b, int *cost);
  */
 void	aux_rotate_a(t_stack **stack_a, int *cost);
 
-/** [Passed]
+/**
  * @brief Finds the element in stack B with the cheapest cost to move to
  * stack A and moves it to the correct position in stack A.
  * @param stack_a Stack with integers
@@ -214,21 +214,21 @@ void	aux_rotate_a(t_stack **stack_a, int *cost);
  */
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
-/** [Passed]
+/**
  * @brief Get the stack before last element
  * @param stack
  * @return t_stack* before the end
  */
 t_stack	*get_stack_before_tail(t_stack *stack);
 
-/** [Passed]
+/**
  * @brief will return the last element
  * @param stack
  * @return t_stack* Pointer to last stack
  */
 t_stack	*get_stack_tail(t_stack *stack);
 
-/** [Passed]
+/**
  * @brief Return the highest index in stack. This will help us to handler
  * simple sort approach.
  * @param stack
@@ -236,7 +236,7 @@ t_stack	*get_stack_tail(t_stack *stack);
  */
 int		find_highest_index(t_stack *stack);
 
-/** [Passed]
+/**
  * @brief Assigns a target position in stack A to each element of stack A.
  *	The target position is the spot the element in B needs to
  *	get to in order to be sorted correctly. This position will
@@ -328,13 +328,13 @@ void	r_rotate_b(t_stack **stack_b);
  */
 void	rr_rotate(t_stack **stack_a, t_stack **stack_b);
 
-/** [Passed]
+/**
  * @brief Exit program. Invalid integer passed by param
  * @param stack_a Stack with integers
  */
 void	invalid_int(t_stack **stack_a);
 
-/** [Passed]
+/**
  * @brief help us to verify how the list is in this moment
  * @param stack_a Stack with integers
  * @param identify (A) Stack A. (B) Stack B

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 09:05:17 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 10:06:59 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		set_head_stack(stack_a);
 }
 
-/** [passed]
+/**
  * @brief Will rotate (or reverse rotate) Stack A until the head stay in
  * position 0. (To order the list, this situation may occur). Just rotate to
  * the correct spot

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:21 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:18:49 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	ft_print_list(t_stack *stack, char identify)
 	ft_printf("\n");
 }
 
-/** [Passed]
+/**
  * @brief Responsible to find the best sort method. Just 1 method is not able to
  * sort with just a few movements. Mandatory in project: Sort by minimum OP
  * possible

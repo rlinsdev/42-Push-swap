@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:55:51 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:45:51 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	invalid_input(char **argv, int argc)
 	return (0); // Return OK
 }
 
-/** [Passed]
+/**
  * @brief Verify if all values are valid inputs
  * @param arg arguments
  * @return int
@@ -55,7 +55,7 @@ static int	ft_is_number(char *arg)
 	return (1); // OK
 }
 
-/** [Passed]
+/**
  * @brief Check if exist the same number in param
  * @param items Arr of integers
  * @param count Total of integers
@@ -85,7 +85,7 @@ static int	ft_is_duplicated(char **items, int count)
 	return (0);
 }
 
-/** [passed]
+/**
  * @brief Verify if the char is a valid number
  * @param nbr
  * @return int 0 if it's not a number. 1 if is a valid number
@@ -96,7 +96,7 @@ static int	ft_is_valid_char_number(char nbr)
 	return (nbr >= '0' && nbr <= '9');
 }
 
-/** [Passed]
+/**
  * @brief Verify duplication and check if there are any plus (+) signal before
  * @param f_digit First number
  * @param s_digit Seconde Number

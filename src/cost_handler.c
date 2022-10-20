@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 08:07:18 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	exec_move(stack_a, stack_b, cost_a, cost_b);
 }
 
-/** [Passed]
+/**
  * @brief Chooses which move to do, to get the B stack element to the correct
  * position in stack A.
  * If cost_a and cost_b are the same signal, RRR or RR will be executed.
@@ -106,7 +106,7 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 	push_a(stack_a, stack_b);
 }
 
-/** [Passed]
+/**
  * @brief Absolute number. Return the positive number. Itś necessary to know
  * how many interactions will be necessary. The signal will be used in future.
  * @param nb Integer number

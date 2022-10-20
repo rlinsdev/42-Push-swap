@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 09:59:30 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack	*array_to_stack(char **argv, int argc)
 	return (stack_a);
 }
 
-/** [Passed]
+/**
  * @brief Add stack to the end and link it
  * @param stack
  * @param new new stack generated. Linked list will point to here
@@ -54,7 +54,7 @@ static void	link_stack_to_tail(t_stack **stack, t_stack *new)
 	last_stack->next = new;
 }
 
-/** [Passed]
+/**
  * @brief Initialize the stack and update value
  * @param value int value
  * @return t_stack* stack initialized
