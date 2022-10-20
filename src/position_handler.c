@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:08:39 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:44:16 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	tmp_stack_b = *stack_b;
 	// Initialize position on stack_A
 	update_position(stack_a);
-	ft_print_list(*stack_a, 'A');
 	// Initialize position on stack_B
 	update_position(stack_b);
-	ft_print_list(*stack_b, 'B');
 	target_pos = 0;
 	while (tmp_stack_b)
 	{
@@ -39,9 +37,7 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 		tmp_stack_b->tar_pos = target_pos;
 		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
-		ft_print_list(*stack_b, 'B');
 	}
-	ft_print_list(*stack_b, 'B');
 }
 
 /**
@@ -120,7 +116,6 @@ int	get_position_lower_element(t_stack **stack)
 	lowest_index = INT_MAX;
 	// With push from B, position is wrong. Fix it.
 	update_position(stack);
-	ft_print_list(*stack, 'A');
 	lowest_pos = tmp->pos;
 	while (tmp)
 	{

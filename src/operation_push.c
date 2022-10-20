@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 07:04:06 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:43:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	write(1, "pa\n", 3);
-	ft_print_list(*stack_a, 'A');
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
-	ft_print_list(*stack_a, 'A');
 }
 
 /**
@@ -63,14 +61,10 @@ stack_size)
 		{
 			push_b(stack_a, stack_b);
 			pushed++;
-			ft_print_list(*stack_a, 'A');
-			ft_print_list(*stack_b, 'B');
 		}
 		else
 		{
 			rotate_a(stack_a);
-			ft_print_list(*stack_a, 'A');
-			ft_print_list(*stack_b, 'B');
 		}
 		i++;
 	}
@@ -79,7 +73,5 @@ stack_size)
 	{
 		push_b(stack_a, stack_b);
 		pushed++;
-		ft_print_list(*stack_a, 'A');
-		ft_print_list(*stack_b, 'B');
 	}
 }

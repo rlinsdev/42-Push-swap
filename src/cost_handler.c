@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:26:24 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:43:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 		// Go to next
 		tmp_b = tmp_b->next;
 	}
-	ft_print_list(*stack_b, 'B');
 }
 
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
@@ -85,8 +84,6 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 				int cost_b)
 {
-	ft_print_list(*stack_a, 'A');
-	ft_print_list(*stack_b, 'B');
 	// Both negative? RRR
 	if (cost_a < 0 && cost_b < 0)
 		aux_rev_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
@@ -95,9 +92,7 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 		aux_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
 	// Rotate A.
 	aux_rotate_a(stack_a, &cost_a);
-	ft_print_list(*stack_a, 'A');
 	aux_rotate_b(stack_b, &cost_b);
-	ft_print_list(*stack_b, 'B');
 	// Push item of B to A
 	push_a(stack_a, stack_b);
 }
