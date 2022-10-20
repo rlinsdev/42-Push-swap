@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:23:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
  * Pos: Essential to sort algorithm. (Is like the index in array).
  *  Will exist just upper 4. Its the position where the number stay right now!
  * Tar_pos: Target position. Will exist just in B. Where the value should be.
- *  Some times, it may be the same value
- * cost_a: how many steps to rotate Stack A. Cost just exist in B
- * cost_b: How many steps to rotate Stack B. Cost just exist in B
+ *  Some times, it may be the same value. Just exist in B
+ * cost_a: how many steps to rotate Stack A. Just exist in B
+ * cost_b: How many steps to rotate Stack B. Just exist in B
  */
 typedef struct s_stack
 {
@@ -247,7 +247,7 @@ int		find_highest_index(t_stack *stack);
  */
 void	handler_target_position(t_stack **stack_a, t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief sa (swap a): Swap the first 2 elements at the top of stack a.
  * Do nothing if there is only one or no elements.
  * @param stack_a Stack with integers
@@ -269,7 +269,7 @@ void	swap_b(t_stack **stack_b);
  */
 void	swap_swap(t_stack **stack_a, t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief pa (push a): Take the first element at the top of b and put it
  * at the top of a. Do nothing if b is empty.
  * @param stack_a Stack with integers
@@ -277,7 +277,7 @@ void	swap_swap(t_stack **stack_a, t_stack **stack_b);
  */
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief (push b): Take the first element at the top of a and put it at
  * the top of b. Do nothing if a is empty.
  * @param stack_a Stack with integers
@@ -285,7 +285,7 @@ void	push_a(t_stack **stack_a, t_stack **stack_b);
  */
 void	push_b(t_stack **stack_a, t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief ra (rotate a): Shift up all elements of stack a by 1.
  * The first element becomes the last one
  * @param stack_a Stack with integers
@@ -293,35 +293,35 @@ void	push_b(t_stack **stack_a, t_stack **stack_b);
  */
 void	rotate_a(t_stack **stack_a);
 
-/** [OK]
+/**
  * @brief (rotate b): Shift up all elements of stack b by 1.
  * The first element becomes the last one.
  * @param stack_b Auxiliary stack
  */
 void	rotate_b(t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief ra (rotate a) and rb (rotate b) at the same time
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief rra (reverse rotate a): Shift down all elements of stack a by 1.
  * The last element becomes the first one.
  * @param stack_a Stack with integers
  */
 void	r_rotate_a(t_stack **stack_a);
 
-/** [OK]
+/**
  * @brief (reverse rotate b): Shift down all elements of stack b by 1.
  * The last element becomes the first one.
  * @param stack_b Auxiliary stack
  */
 void	r_rotate_b(t_stack **stack_b);
 
-/** [OK]
+/**
  * @brief rra and rrb at the same time.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
