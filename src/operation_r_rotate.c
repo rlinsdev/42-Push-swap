@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:33:52 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 07:19:43 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:31:50 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	rr_rotate(t_stack **stack_a, t_stack **stack_b)
 
 /**
  * @brief Reverse Rotate Stack
- *
  * @param stack - by ref. Will rotate the list
  */
 static void	r_rotate_stack(t_stack **stack)

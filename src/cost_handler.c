@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:26:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	while (tmp_b)
 	{
 		/* Verify the cost to execute a Push A. The signal and the number will
-		 * be important. But to now known many, the number must be absolute */
+		 * be important. But to know how many, the number must be absolute */
 		if (ft_abs_nb(tmp_b->cost_a) + ft_abs_nb(tmp_b->cost_b)
 			< ft_abs_nb(cheapest))
 		{
@@ -85,9 +85,7 @@ void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 				int cost_b)
 {
-	//printf("A:\n");
 	ft_print_list(*stack_a, 'A');
-	// printf("B:\n");
 	ft_print_list(*stack_b, 'B');
 	// Both negative? RRR
 	if (cost_a < 0 && cost_b < 0)
@@ -97,10 +95,8 @@ static void	exec_move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 		aux_rotate_both(stack_a, stack_b, &cost_a, &cost_b);
 	// Rotate A.
 	aux_rotate_a(stack_a, &cost_a);
-	// printf("A:\n");
 	ft_print_list(*stack_a, 'A');
 	aux_rotate_b(stack_b, &cost_b);
-	// printf("B:\n");
 	ft_print_list(*stack_b, 'B');
 	// Push item of B to A
 	push_a(stack_a, stack_b);
