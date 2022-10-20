@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:01:28 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 11:03:24 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 08:07:18 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	size_b = get_stack_size(tmp_b);
 	while (tmp_b)
 	{
-		// As pattern, cost of B will be a position of B.
+		/* Pattern: Cost of B will be a position of B.
+		 * Cost B -> Will be always the position B to be send to A. If the
+		 * position is in middle to tail, negative it(reverse rotate
+		 * is cheapest).*/
 		tmp_b->cost_b = tmp_b->pos;
-		/* Will change this cost, when we check that will be cheapest
-		 * reverse rotate (negative to indicate reverse rotate)*/
 		if (tmp_b->pos > (size_b / 2))
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-		// As pattern, cost of A will be a target position of A.
+		/* Pattern: Cost of A will be a target position of A
+		 * Cost A -> Will be always the Target Position. If the position
+		 * is in middle to tail, negative it (Reverse rotate is cheapest) */
 		tmp_b->cost_a = tmp_b->tar_pos;
 		if (tmp_b->tar_pos > (size_a / 2))
 			tmp_b->cost_a = (size_a - tmp_b->tar_pos) * -1;
@@ -47,25 +50,25 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 
 void	exec_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
+	t_stack	*tmp_b;
 	int		cheapest;
 	int		cost_a;
 	int		cost_b;
 
-	tmp = *stack_b;
+	tmp_b = *stack_b;
 	cheapest = INT_MAX;
-	while (tmp)
+	while (tmp_b)
 	{
 		/* Verify the cost to execute a Push A. The signal and the number will
 		 * be important. But to now known many, the number must be absolute */
-		if (ft_abs_nb(tmp->cost_a) + ft_abs_nb(tmp->cost_b)
+		if (ft_abs_nb(tmp_b->cost_a) + ft_abs_nb(tmp_b->cost_b)
 			< ft_abs_nb(cheapest))
 		{
-			cheapest = ft_abs_nb(tmp->cost_b) + ft_abs_nb(tmp->cost_a);
-			cost_a = tmp->cost_a;
-			cost_b = tmp->cost_b;
+			cheapest = ft_abs_nb(tmp_b->cost_b) + ft_abs_nb(tmp_b->cost_a);
+			cost_a = tmp_b->cost_a;
+			cost_b = tmp_b->cost_b;
 		}
-		tmp = tmp->next;
+		tmp_b = tmp_b->next;
 	}
 	exec_move(stack_a, stack_b, cost_a, cost_b);
 }

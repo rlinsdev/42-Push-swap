@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 07:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 10:19:05 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 08:03:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
-// # include <stdio.h> // TODO: Printf - Remover
 # include <stdlib.h> // malloc
 
 /**
@@ -23,7 +22,8 @@
  * Index: Essential to sort algorithm. Where in the list it must stay
  * Pos: Essential to sort algorithm. (Is like the index in array).
  *  Will exist just upper 4. Its the position where the number stay right now!
- * Tar_pos: Target position. Will exist just in B. Where the value should be
+ * Tar_pos: Target position. Will exist just in B. Where the value should be.
+ *  Some times, it may be the same value
  * cost_a: how many steps to rotate Stack A
  * cost_b: How many steps to rotate Stack B. TODO: Cost just exist in B
  */
@@ -122,14 +122,14 @@ void	simple_sort(t_stack **stack_a);
 /** [Passed]
  * @brief Core of program. Responsible to sort more than 3 integers. Send all
  * element to B, but 3. Find current position. Calculate target position. Check
- * the cost of actions. Take action.
+ * the cost of actions. Take action. Try to let the Highest Number in Stack A.
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  * @param stack_size Size of stack
  */
 void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
-/** TODO: GetBetter brief
+/**
  * @brief Will update cost_a and cost_b in stack B.
  * Verify how many actions must to do to order a list.
  * Two costs are calculated:
@@ -137,6 +137,10 @@ void	core_sort_stack(t_stack **stack_a, t_stack **stack_b, int stack_size);
  *	cost_a represents the cost of getting to the right position in stack A.
  * If the element is in the bottom half of the stack, the cost will be negative,
  * If it is in the top half, the cost is positive.
+ * Cost B -> Will be always the position B to be send to A. If the position
+ * is in middle to tail, negative it (reverse rotate cheapest).
+ * Cost A -> Will be always the target Position A. If the position is in middle
+ * to tail, negative it (Reverse rotate cheapest)
  * @param stack_a Stack with integers
  * @param stack_b Auxiliary stack
  */
