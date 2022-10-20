@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:47:58 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:51:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,14 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	int		target_pos;
 
 	tmp_stack_b = *stack_b;
-	// Initialize position on stack_A
 	update_position(stack_a);
-	// Initialize position on stack_B
 	update_position(stack_b);
 	target_pos = 0;
 	while (tmp_stack_b)
 	{
-		/* Will get the target position to B
-		 * To this current element in B get inside in A, it must be put in the
-		 * position returned in this method */
 		target_pos = update_target_position(stack_a, tmp_stack_b->index,
 				INT_MAX, target_pos);
-		// Update Target Position
 		tmp_stack_b->tar_pos = target_pos;
-		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
 	}
 }

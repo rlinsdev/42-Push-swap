@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:48:56 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:51:41 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,7 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 				ptr_aux = stack_a;
 			}
 			else
-			{
 				ptr_aux = ptr_aux->next;
-			}
 		}
 		if (highest_stack != NULL)
 			highest_stack->index = stack_size;
