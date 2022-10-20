@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:23:43 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/19 11:38:22 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/20 09:08:39 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,49 +30,31 @@ void	handler_target_position(t_stack **stack_a, t_stack **stack_b)
 	target_pos = 0;
 	while (tmp_stack_b)
 	{
-		// Will get the target position to B
+		/* Will get the target position to B
+		 * To this current element in B get inside in A, it must be put in the
+		 * position returned in this method */
 		target_pos = update_target_position(stack_a, tmp_stack_b->index,
 				INT_MAX, target_pos);
 		// Update Target Position
 		tmp_stack_b->tar_pos = target_pos;
 		// Go to the next
 		tmp_stack_b = tmp_stack_b->next;
+		ft_print_list(*stack_b, 'B');
 	}
 	ft_print_list(*stack_b, 'B');
 }
 
-/** [Todo comment]
+/**
  * @brief
- *	Picks the best target position in stack A for the given index of
- *	an element in stack B. First checks if the index of the B element can
- *	be placed somewhere in between elements in stack A, by checking whether
- *	there is an element in stack A with a bigger index. If not, it finds the
- *	element with the smallest index in A and assigns that as the target pos
- *	--- Example:
- *		tar_pos starts at INT_MAX
- *		B index: 3
- *		A contains indexes: 9 4 2 1 0
- *		9 > 3 && 9 < INT_MAX 	: targ_pos updated to 9
- *		4 > 3 && 4 < 9 			: targ pos updated to 4
- *		2 < 3 && 2 < 4			: no update!
- *	So tar_pos needs to be the position of index 4, since it is
- *	the closest index.
- *	--- Example:
- *		tar_pos starts at INT_MAX
- *		B index: 20
- *		A contains indexes: 16 4 3
- *		16 < 20					: no update! target_pos = INT_MAX
- *		4  < 20					: no update! target_pos = INT_MAX
- *		3  < 20					: no update! target_pos = INT_MAX
- *	... tar_pos stays at INT MAX, need to switch strategies.
- *		16 < 20					: target_pos updated to 20
- *		4  < 20					: target_pos updated to 4
- *		3  < 20					: target_pos updated to 3
- *	So tar_pos needs to be the position of index 3, since that is
- *	the "end" of the stack.
- * @param stack_a
- * @param stack_b_index
- * @param target_index
+ * Practically will verify the index coming in B, and calculate where to put
+ * in A. Compare must be between Index of A, with index of B.
+ * Handle the best Target position to put the element B in the stack A
+ * First, verify if the index in B is small then B, and return Target Position
+ * In the first execution, frequently, the first element will be put in the
+ * first place in A (position 0).
+ * @param stack_a Stack A to check and verify all elements
+ * @param stack_b_index Index in Stack B coming to compare (loop).
+ * @param target_index coming INT_MAX, but will change inside the loop
  * @param target_pos
  * @return int
  */
@@ -84,10 +66,9 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 	tmp_a = *stack_a;
 	while (tmp_a)
 	{
-		// Just get inside when index of A will be smaller than index o B
+		// Just get inside when index of A is bigger than Index B
 		if (tmp_a->index > stack_b_index && tmp_a->index < target_index)
 		{
-			//TODO: Debug inside
 			target_index = tmp_a->index;
 			target_pos = tmp_a->pos;
 		}
@@ -100,6 +81,8 @@ static int	update_target_position(t_stack **stack_a, int stack_b_index,
 	// Loop through A again
 	while (tmp_a)
 	{
+		/* Compare the target index (First time will be MaxInt and put target
+		* pos to 0 [first in pile]) */
 		if (tmp_a->index < target_index)
 		{
 			target_index = tmp_a->index;
