@@ -151,3 +151,8 @@ https://github.com/elijahkash/push_swap_gui
 • checker_linux:
 
 https://github.com/laisarena/push_swap_tester.git
+
+# `GUI execution:`
+
+<img src="./img/PushSwap-10.gif">
+<img src="./img/PushSwap-100.gif">
