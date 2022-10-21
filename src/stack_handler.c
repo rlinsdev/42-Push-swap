@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:59 by rlins             #+#    #+#             */
-/*   Updated: 2022/10/20 09:20:11 by rlins            ###   ########.fr       */
+/*   Updated: 2022/10/21 09:08:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	init_stack_index(t_stack *stack_a, int stack_size)
 				// Update aux variable with the lowest value founded
 				value = ptr_aux->value;
 				highest_stack = ptr_aux;
+				// Start the verification again
 				ptr_aux = stack_a;
 			}
 			else
