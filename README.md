@@ -152,3 +152,8 @@ https://github.com/elijahkash/push_swap_gui
 
 https://github.com/laisarena/push_swap_tester.git
 
+# `Branchs:`
+• main
+
+• delivery
+
