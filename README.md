@@ -98,25 +98,25 @@ little complex, but it's working...
 #500 Numbers between 0 and 1000
 	$> (shuf -i 0-1000 -n 500)
 #Validation-1:
-	$>ARG="2 1 0"; ./bin/push_swap $ARG | ./checker_linux $ARG
-	$>ARG="2 1 0"; ./bin/push_swap $ARG | wc -l
-	$>ARG="2 1 0"; ./bin/push_swap $ARG
+	$> ARG="2 1 0"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$> ARG="2 1 0"; ./bin/push_swap $ARG | wc -l
+	$> ARG="2 1 0"; ./bin/push_swap $ARG
 #Validation-2:
-	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG | ./checker_linux $ARG
-	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG | wc -l
-	$>ARG="1 5 2 4 3"; ./bin/push_swap $ARG
+	$> ARG="1 5 2 4 3"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$> ARG="1 5 2 4 3"; ./bin/push_swap $ARG | wc -l
+	$> ARG="1 5 2 4 3"; ./bin/push_swap $ARG
 #Validation-3:
-	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | ./checker_linux $ARG
-	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | wc -l
-	$>ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG
+	$> ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$> ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG | wc -l
+	$> ARG="$(shuf -i 0-10 -n 5)"; ./bin/push_swap $ARG
 #Validation-4:
-	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | ./checker_linux $ARG
-	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | wc -l
-	$>ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG
+	$> ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$> ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG | wc -l
+	$> ARG="$(shuf -i 0-1000 -n 100)"; ./bin/push_swap $ARG
 #Validation-5:
-	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | ./checker_linux $ARG
-	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | wc -l
-	$>ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG
+	$> ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | ./checker_linux $ARG
+	$> ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG | wc -l
+	$> ARG="$(shuf -i 0-2000 -n 500)"; ./bin/push_swap $ARG
 ```
 
 # `Videos`
