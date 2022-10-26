@@ -12,7 +12,7 @@
 <!-- git hub marketplace - norminete: https://github.com/marketplace/actions/42-norminette -->
 
 [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap&)
-![norminette](https://github.com/rlinsdev/42-Push-swap/workflows/norminette/badge.svg)
+![norminette](https://github.com/rlinsdev/42-Push-swap/workflows/norminette/badge.svg?branch=delivery)
 </div>
 
 
