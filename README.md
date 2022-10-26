@@ -13,6 +13,10 @@
 <!-- [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat)](http://hits.dwyl.com/rlinsdev/42-Push-swap) -->
 [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap)
 
+![norminette](https://github.com/rlinsdev/42-Push-swap/actions/workflows/main.yml/badge.svg)
+
+![norminette](https://github.com/alexandregv/norminette-action-demo/workflows/norminette/badge.svg)
+
 <!-- [![HitCount](https://hits.dwyl.com/rlinsdev/42-Push-swap.svg?style=flat&show=unique)](http://hits.dwyl.com/rlinsdev/42-Push-swap) -->
 
 # What is Push Swap?
