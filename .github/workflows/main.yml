@@ -4,4 +4,4 @@
   uses: alexandregv/norminette-action@v3
   with:
     # Flags passed to norminette
-    flags: # default is .
+    flags: .gi # default is .
